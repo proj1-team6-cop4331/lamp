@@ -9,7 +9,7 @@ input {
     font-size: 16px;
 }
 
-#submitButton {
+#loginButton {
     border-radius: 10px;
     background-color: rgb(126, 178, 178);
     font-weight: 500;
