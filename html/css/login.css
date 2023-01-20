@@ -1,0 +1,23 @@
+h1, label, #submitButton {
+    font-family: 'Nunito', sans-serif;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#submitButton {
+    border-radius: 10px;
+    background-color: rgb(126, 178, 178);
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
