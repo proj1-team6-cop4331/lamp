@@ -15,7 +15,7 @@ loginButton.addEventListener("click", function() {
     var jsonPayload = JSON.stringify(packageItUp);
 
     // This url doesn't seem to work. Is it supposed to be "lamp-cop4331.skyclo.dev/LAMPAPI/Login.php?"
-    var url = "http://lamp-cop4331.skyclo.dev/Login.php";
+    var url = "https://lamp-cop4331.skyclo.dev/Login.php";
     
     // Create a request
     var xhr = new XMLHttpRequest();
