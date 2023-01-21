@@ -2,6 +2,34 @@ h1, label, #submitButton {
     font-family: 'Nunito', sans-serif;
 }
 
+#head-bar {
+    width: 100%;
+    height: 20%;
+    display: inline-block;
+    background: url("lamp-cop4331.skyclo.dev/images/black-marble-natural-pattern-background-abstract-black-white.jpg") repeat;
+}
+
+#corner-logo {
+    width: 20%;
+}
+
+#logo {
+    width: 200px;
+    height: 200px;
+    float: left;
+    border-radius: 50%;
+}
+
+.logo-text {
+    text-align: right;
+}
+
+#brand-container {
+    width: 80%;
+    color: white;
+    font-size: large;
+}
+
 input {
     width: 100%;
     margin-bottom: 20px;
