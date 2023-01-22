@@ -49,7 +49,7 @@ h1, label, #submitButton {
     line-height: 87px;
 }
 
-form .login-form {
+form.login-form {
     width: 275px;
     margin-left: 20px;
 }
