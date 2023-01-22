@@ -28,8 +28,7 @@ h1, label, #submitButton {
     font-size: 28px;
     color: white;
     font-family: monospace;
-    margin-top: 8px;
-    margin-right: 21px;
+    margin: 8px 21px 0px 0px;
 }
 
 #brand-container {
