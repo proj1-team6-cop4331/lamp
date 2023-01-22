@@ -1,5 +1,5 @@
 <?php
-include 'util.php';
+include 'Util.php';
 
 $inData = getRequestInfo();
 
@@ -35,8 +35,9 @@ else
     $conn->close();
 
     //return info
-    $searchResults .= '{'.'"id": "'.$id.''.'"}';
-    returnSearchInfo($searchResults);
+    returnSearchInfo('{'.'"id": "'.$id.''.'"}');
+    
+    
   } else {
     //username doesnt exist
     returnWithError("Taken Username");

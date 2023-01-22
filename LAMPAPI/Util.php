@@ -22,8 +22,13 @@ function returnWithInfo( $firstName, $lastName, $id )
   sendResultInfoAsJson( $retValue );
 }
 
-function returnSearchInfo($searchResults){
-  $retValue = '{"results":[' . $searchResults . '],"error":""}';
+function returnSearchInfo( $searchResults ){
+	$retValue = '{"results":[' . $searchResults . '],"error":""}';
+	sendResultInfoAsJson( $retValue );
+}
+
+function returnSearchError( $info ){
+	$retValue = '{"Error": "' . $info . '"}';
 	sendResultInfoAsJson( $retValue );
 }
 ?>
