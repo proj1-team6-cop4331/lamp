@@ -1,3 +1,8 @@
+body {
+    height: 100vh;
+    background-color: lightslategrey;
+}
+
 h1, label, #submitButton {
     font-family: 'Nunito', sans-serif;
 }
@@ -44,6 +49,11 @@ h1, label, #submitButton {
     line-height: 87px;
 }
 
+form .login-form {
+    width: 275px;
+    margin-left: 20px;
+}
+
 input {
     width: 100%;
     margin-bottom: 20px;
@@ -61,5 +71,9 @@ input {
 .login {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 73%;
+    height: 100%;
+    margin-left: 11.5%;
+    margin-right: auto;
+    background-color: lightgrey;
 }
