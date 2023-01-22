@@ -3,7 +3,11 @@ body {
     background-color: lightslategrey;
 }
 
-h1, label, #submitButton {
+#signIn {
+    margin-left: 25px;
+}
+
+h1, label, #loginButton {
     font-family: 'Nunito', sans-serif;
 }
 
@@ -51,7 +55,7 @@ h1, label, #submitButton {
 
 form.login-form {
     width: 275px;
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 input {
@@ -66,6 +70,7 @@ input {
     background-color: rgb(126, 178, 178);
     font-weight: 500;
     font-size: 24px;
+    width: 50%;
 }
 
 .login {
@@ -73,7 +78,7 @@ input {
     flex-direction: column;
     width: 73%;
     height: 100%;
-    margin-left: 11.5%;
+    margin-left: 11.2%;
     margin-right: auto;
     background-color: lightgrey;
 }
