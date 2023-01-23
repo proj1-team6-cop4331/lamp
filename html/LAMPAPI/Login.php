@@ -1,5 +1,5 @@
-
 <?php
+include 'Util.php';
 
 $inData = getRequestInfo();
 
@@ -7,51 +7,28 @@ $id = 0;
 $firstName = "";
 $lastName = "";
 
-// location, admin username, admin password, database name.
-$conn = new mysqli("161.35.112.134", "TheBeast", "WeLoveCOP4331", "COP4331");
-
-echo "HELLO Team";
-echo $conn->connect_errno;
-
-if ($conn->connect_error) {
-	returnWithError($conn->connect_error);
-} else {
-	$stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
-	$stmt->bind_param("ss", $inData["login"], $inData["password"]);
-	$stmt->execute();
-	$result = $stmt->get_result();
-
-	if ($row = $result->fetch_assoc()) {
-		returnWithInfo($row['firstName'], $row['lastName'], $row['ID']);
-	} else {
-		returnWithError("No Records Found");
-	}
-
-	$stmt->close();
-	$conn->close();
-}
-
-function getRequestInfo()
+$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 	
+if( $conn->connect_error )
 {
-	return json_decode(file_get_contents('php://input'), true);
+  returnWithError( $conn->connect_error );
 }
-
-function sendResultInfoAsJson($obj)
+else
 {
-	header('Content-type: application/json');
-	echo $obj;
-}
+  $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
+  $stmt->bind_param("ss", $inData["login"], $inData["password"]);
+  $stmt->execute();
+  $result = $stmt->get_result();
 
-function returnWithError($err)
-{
-	$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
-	sendResultInfoAsJson($retValue);
-}
+  if( $row = $result->fetch_assoc()  )
+  {
+    returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+  }
+  else
+  {
+    returnWithError("No Records Found");
+  }
 
-function returnWithInfo($firstName, $lastName, $id)
-{
-	$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
-	sendResultInfoAsJson($retValue);
+  $stmt->close();
+  $conn->close();
 }
-
 ?>
