@@ -7,6 +7,11 @@ $id = 0;
 $firstName = "";
 $lastName = "";
 
+$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+if ($conn->connect_error) {
+  returnWithError($conn->connect_error);
+} else {
+  $stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Users WHERE Login=? AND Password =?");
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 	
 if( $conn->connect_error )
 {
@@ -19,16 +24,12 @@ else
   $stmt->execute();
   $result = $stmt->get_result();
 
-  if( $row = $result->fetch_assoc()  )
-  {
-    returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
-  }
-  else
-  {
+  if ($row = $result->fetch_assoc()) {
+    returnWithInfo($row['FirstName'], $row['LastName'], $row['ID']);
+  } else {
     returnWithError("No Records Found");
   }
 
   $stmt->close();
   $conn->close();
 }
-?>
