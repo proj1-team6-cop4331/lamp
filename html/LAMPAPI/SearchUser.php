@@ -11,7 +11,7 @@ if( $conn->connect_error )
   returnWithError( $conn->connect_error );
 } else {
   $stmt = $conn->prepare("SELECT * FROM Users Where Login = ?");
-  $stmt->bind_param("s", $iinData["login"]);
+  $stmt->bind_param("s", $inData["login"]);
   $stmt->execute();
 
   $result = $stmt->get_result();
