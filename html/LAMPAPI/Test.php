@@ -14,7 +14,7 @@
 
     if( $row = $result->fetch_assoc()  )
     {
-      returnWithInfo( $row );
+      returnWithError( "We found something (not an error)" );
     }
     else
     {
