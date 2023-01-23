@@ -4,10 +4,10 @@ include 'Util.php';
 $inData = getRequestInfo();
 
 //get user info
-$FirstName = $inData["firstName"];
-$LastName = $inData["lastName"];
-$Login = $inData["login"];
-$Password = $inData["password"];
+$firstName = $inData["firstName"];
+$lastName = $inData["lastName"];
+$login = $inData["login"];
+$password = $inData["password"];
 
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 if( $conn->connect_error )
@@ -24,8 +24,8 @@ else
 
   //if no one else has the same login or username, create new
   if(mysqli_num_rows($result) == 0){
-    $stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) Values (?,?,?,?)");
-    $stmt->bind_param("ssss", $FirstName, $LastName, $Login, $Password);
+    $stmt = $conn->prepare("INSERT into Users (firstName, lastName, login, password) Values (?,?,?,?)");
+    $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
     $stmt->execute();
 
     //returns value generated for an auto_increment column or id column
