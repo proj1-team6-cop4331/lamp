@@ -36,7 +36,7 @@ else
 
     //return info
     returnSearchInfo('{'.'"id": "'.$id.''.'"}');
-    
+
     
   } else {
     //username doesnt exist
