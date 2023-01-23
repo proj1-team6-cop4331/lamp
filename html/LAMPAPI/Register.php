@@ -24,7 +24,7 @@ else
 
   //if no one else has the same login or username, create new
   if(mysqli_num_rows($result) == 0){
-    $stmt = $conn->prepare("INSERT into USERS (FirstName, LastName, Login, Password) Values (?,?,?,?)");
+    $stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) Values (?,?,?,?)");
     $stmt->bind_param("ssss", $FirstName, $LastName, $Login, $Password);
     $stmt->execute();
 
