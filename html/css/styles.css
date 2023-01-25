@@ -12,6 +12,7 @@ h1, label, #loginButton {
     text-align: center;
     font-size: 3.0em;
     font-family: 'Noto+Sans', sans-serif;
+    margin-top: 60px;
 }
 
 #head-bar {
@@ -60,7 +61,7 @@ h1, label, #loginButton {
 }
 
 #signIn {
-    width: 19.1%;
+    width: 18.7%;
     float: right;
     background-color: lightgrey;
     border: #5c5c5c solid;
@@ -72,7 +73,19 @@ h1, label, #loginButton {
 
 form.login-form {
     width: 150px;
-    margin-left: 5px;
+    margin-left: 60px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    height: 100%;
+    margin-top: 134px;
+    margin-left: 11.2%;
+    margin-right: auto;
+    background-color: lightgrey;
+    border: 7px #898989  ridge;
 }
 
 #about {
@@ -84,6 +97,7 @@ form.login-form {
 #regNow {
     font-size: 1.5em;
     margin-left: 50px;
+    font-family: 'Montserrat';
 }
 
 #register-form {
@@ -91,11 +105,15 @@ form.login-form {
 }
 
 #register-form > input {
+    margin-top: 12px;
     width: 40%;
 }
 
 #regButton {
     border-radius: 5px;
+    margin-top: 5px;
+    width: 9em;
+    height: 1.8em;
 }
 
 #regButton:hover {
@@ -115,16 +133,4 @@ input {
     font-size: 24px;
     width: 50%;
     margin-bottom: 15px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    width: 69%;
-    height: 100%;
-    margin-top: 134px;
-    margin-left: 11.2%;
-    margin-right: auto;
-    background-color: lightgrey;
-    border: #5c5c5c ridge;
 }
