@@ -78,7 +78,7 @@ input {
     width: 50%;
 }
 
-.content {
+.info {
     display: flex;
     flex-direction: column;
     width: 73%;
