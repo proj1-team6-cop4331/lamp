@@ -11,7 +11,7 @@ h1, label, #loginButton {
 #motto {
     text-align: center;
     font-size: 3.0em;
-    font-family: 'Object Sans', sans-serif;
+    font-family: 'Noto+Sans', sans-serif;
 }
 
 #head-bar {
@@ -66,6 +66,10 @@ h1, label, #loginButton {
     border: #5c5c5c solid;
 }
 
+#retUser {
+    margin-left: 15px;
+}
+
 form.login-form {
     width: 150px;
     margin-left: 5px;
@@ -73,19 +77,29 @@ form.login-form {
 
 #about {
     text-align: center;
-    font-size: 3.0em;
+    font-size: 2.0em;
+    font-family: 'Montserrat', 'Lucida Console';
 }
 
 #regNow {
-    font-size: 3.0em;
+    font-size: 1.5em;
+    margin-left: 50px;
 }
 
 #register-form {
-    margin-left: 10px;
+    margin-left: 100px;
+}
+
+#register-form > input {
+    width: 40%;
 }
 
 #regButton {
     border-radius: 5px;
+}
+
+#regButton:hover {
+    background-color: #b5b5b5;
 }
 
 input {
@@ -108,6 +122,7 @@ input {
     flex-direction: column;
     width: 69%;
     height: 100%;
+    margin-top: 134px;
     margin-left: 11.2%;
     margin-right: auto;
     background-color: lightgrey;
