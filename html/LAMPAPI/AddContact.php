@@ -4,11 +4,11 @@
 $inData = getRequestInfo();
 
 // Retrieve info for new contact
-$FirstName = $inData["firstName"];
-$LastName = $inData["lastName"];
-$Phone = $inData["phone"];
-$Email = $inData["email"];
-$UserID = $inData["userID"];
+$firstName = $inData["firstName"];
+$lastName = $inData["lastName"];
+$phone = $inData["phone"];
+$email = $inData["email"];
+$userID = $inData["userID"];
 
 // Change for project but connecting to Database
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
@@ -17,8 +17,8 @@ if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
     // Doing work
-    $stmt = $conn->prepare("INSERT into Contacts (FirstName, LastName, Phone, Email, UserID) VALUES(?,?,?,?,?)");
-    $stmt->bind_param("ssssi", $FirstName, $LastName, $Phone, $Email, $UserID);
+    $stmt = $conn->prepare("INSERT into Contacts (firstName, lastName, phone, email, userID) VALUES(?,?,?,?,?)");
+    $stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $userID);
     $stmt->close();
     $conn->close();
     returnWithError("");
