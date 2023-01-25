@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\html",
+    "\\html\\css",
+    "\\html\\images"
   ],
-  "SelectedNode": "\\C:\\Users\\TheRe\\Source\\Repos\\lamp",
+  "SelectedNode": "\\html\\css\\styles.css",
   "PreviewInSolutionExplorer": false
 }
