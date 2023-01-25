@@ -9,46 +9,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 </head>
-    <body>
-        <div id="head-bar">
-            <div id="corner-logo">
-                <a href="index.html"><img src="https://lamp-cop4331.skyclo.dev/images/5668024_58191.jpg" id="logo" /></a>
-                <h3 class="logo-text">C</h3>
-                <h3 class="logo-text">O</h3>
-                <h3 class="logo-text">P</h3>
-            </div>
-            <div id="brand-container">
-                <h1 id="brand"><u>C</u>ontact <u>O</u>ur <u>P</u>eople Contact Manager!</h1>
-            </div>
+<body>
+    <div id="head-bar">
+        <div id="corner-logo">
+            <a href="index.html"><img src="https://lamp-cop4331.skyclo.dev/images/5668024_58191.jpg" id="logo" /></a>
+            <h3 class="logo-text">C</h3>
+            <h3 class="logo-text">O</h3>
+            <h3 class="logo-text">P</h3>
         </div>
-        <div class="info">
-            <h1 id="motto">We Keep You in Touch With Your People!</h1>
-            <br/>
-            <p id="info">The COP Contact Manager is here to help you keep up with all your important contacts. 
-            Add, edit, and delete an unlimited number of contacts at any time. Whether it's colleagues, friends, or family, 
-            our contact manager will keep your information secure- no more lost sticky notes or broken phones. 
-            <br />Register now for free!</p>
-            <form id="register-form">
-                <label class="register-label">Create Username:</label>
-                <input type="text" id="regUsername" />
-                <label class="register-label">Create a Password (Must be 8 characters or more, must contain at least one 
-                uppercase letter)</label>
-                <input type="text" id="regPassword" />
-                <button type="submit" id="regButton">Register</button>
-            </form>
+        <div id="brand-container">
+            <h1 id="brand"><u>C</u>ontact <u>O</u>ur <u>P</u>eople Contact Manager!</h1>
         </div>
-        <div id="signIn">
-            <h1 id="retUser">Returning user? \nLogin here!</h1>
-            <form class="login-form">
-                <label class="login-label">Username:</label><br>
-                <input id="enterUsername" type="text"><br>
-                <label class="login-label">Password:</label><br>
-                <input id="enterPassword" type="password">
-                <button id="loginButton">Login</button>
-            </form>
-        </div>
-        <footer>
-            <script type="text/javascript" src="js/login.js"></script>
-        </footer>
-    </body>
+    </div>
+    <div id="signIn">
+        <h3 id="retUser"><em>Returning user?</em> <br />
+        Login here!</h3>
+        <form class="login-form">
+            <label class="login-label">Username:</label><br>
+            <input id="enterUsername" type="text"><br>
+            <label class="login-label">Password:</label><br>
+            <input id="enterPassword" type="password">
+            <button id="loginButton">Login</button>
+        </form>
+    </div>
+    <div class="info">
+        <h1 id="motto">We Keep You in Touch With Your People!</h1>
+        <br />
+        <p id="about">
+            The COP Contact Manager is here to help you keep up with all your important contacts.
+            Add, edit, and delete an unlimited number of contacts at any time. Whether it's colleagues, friends, or family,
+            our contact manager will keep your information secure- no more lost sticky notes or broken phones.
+        </p>
+        <p id="regNow"><b>Register now for free!</b></p>
+        <form id="register-form">
+            <label class="register-label">Create Username:</label><br />
+            <input type="text" id="regUsername" /><br />
+            <label class="register-label">
+                <br />
+                Create a Password (Must be 8 characters or more, must contain at least one
+                uppercase letter)
+            </label>
+            <input type="text" id="regPassword" /><br />
+            <button type="submit" id="regButton">Register</button>
+        </form>
+    </div>
+    <footer>
+        <script type="text/javascript" src="js/login.js"></script>
+    </footer>
+</body>
 </html>
