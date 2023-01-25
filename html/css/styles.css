@@ -62,9 +62,10 @@ h1, label, #loginButton {
 
 #signIn {
     width: 18.7%;
+    height: 31.5%;
     float: right;
     background-color: lightgrey;
-    border: #5c5c5c solid;
+    border: #9b9b9b groove;
 }
 
 #retUser {
@@ -79,10 +80,10 @@ form.login-form {
 .info {
     display: flex;
     flex-direction: column;
-    width: 69%;
+    width: 69.1%;
     height: 100%;
     margin-top: 134px;
-    margin-left: 11.2%;
+    margin-left: 11.1%;
     margin-right: auto;
     background-color: lightgrey;
     border: 7px #898989  ridge;
