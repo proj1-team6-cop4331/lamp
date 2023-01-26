@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     margin: 0px 0px 0px 0px;
-    background-color: lightslategrey;
+    background-color: #7795C7;
 }
 
 h1, label, #loginButton {
@@ -11,26 +11,44 @@ h1, label, #loginButton {
 #motto {
     text-align: center;
     font-size: 3.0em;
-    font-family: 'Noto+Sans', sans-serif;
+    font-family: 'anybody', cursive;
+    color: black;
     margin-top: 60px;
 }
 
 #head-bar {
     width: 100%;
-    height: 134px;
+    height: auto;
     display: inline-block;
-    position: fixed;
     top: 0px;
+    
+}
+
+#head-bar, nav {
     background: url("https://lamp-cop4331.skyclo.dev/images/black-marble-natural-pattern-background-abstract-black-white.jpg") repeat;
 }
 
-#corner-logo {
-    width: 11%;
-    height: 100%;
-    float: left;
-    border-right: solid grey;
+.nav-link {
+    color: white;
 }
 
+
+#corner-logo {
+    width: 11%;
+    height: auto;
+    float: left;
+    border-right: solid grey;
+    display: inline;
+}
+
+#COP {
+    display: inline;
+}
+
+h3 {
+    display: inline;
+    width: 1vw;
+}
 #logo {
     width: 70%;
     height: 100%;
@@ -41,10 +59,10 @@ h1, label, #loginButton {
 
 .logo-text {
     text-align: right;
-    font-size: 28px;
+    font-size: 2vw;
     color: white;
     font-family: monospace;
-    margin: 8px 21px 0px 0px;
+    margin: 8px 8px 0px 0px;
 }
 
 #brand-container {
@@ -62,7 +80,7 @@ h1, label, #loginButton {
 
 #signIn {
     width: 18.7%;
-    height: 31.5%;
+    height: auto;
     float: right;
     background-color: lightgrey;
     border: #9b9b9b groove;
@@ -70,11 +88,6 @@ h1, label, #loginButton {
 
 #retUser {
     margin-left: 15px;
-}
-
-form.login-form {
-    width: 150px;
-    margin-left: 60px;
 }
 
 .info {
@@ -125,6 +138,15 @@ input {
     margin-bottom: 20px;
     border-radius: 5px;
     font-size: 16px;
+}
+
+h1 {
+    font-family: 'Anybody', cursive;
+    color: white;
+    vertical-align: middle;
+    font-size: 4vw;
+    padding: 10px 30px;
+    text-shadow: rgb(71, 71, 71) 0px 3px;
 }
 
 #loginButton {
