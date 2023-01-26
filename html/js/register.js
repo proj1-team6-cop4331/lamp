@@ -48,6 +48,7 @@ registerButton.addEventListener("click", function() {
 
                 else {
                     console.log("You were registered! Your id is " + userId);
+                    window.location.href = 'profile.html';
                     onSuccess();
                 }
             }

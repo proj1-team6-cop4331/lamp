@@ -1,4 +1,5 @@
 var loginButton = document.querySelector("#loginButton");
+let firstname = '';
 
 loginButton.addEventListener("click", function() {
     var username = document.querySelector("#enterUsername").value;
@@ -43,8 +44,9 @@ loginButton.addEventListener("click", function() {
                     var fn = jsonObject.firstName;
                     var ln = jsonObject.lastName;
                     console.log("Found it! Your name is " + fn + " " + ln + ".");
-
                     onSuccess();
+                    window.localStorage.setItem("first", fn);
+                    window.location.href = "profile.html";
                 }
             }
         }
@@ -62,4 +64,8 @@ loginButton.addEventListener("click", function() {
 
 function onSuccess() {
     console.log("now, we'll load up the next web page!");
+}
+
+function fillUser() {
+    document.getElementById('user').innerHTML = "Welcome back, " + window.localStorage.getItem("first") + "!";
 }

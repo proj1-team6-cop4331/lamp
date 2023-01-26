@@ -8,6 +8,10 @@ h1, label, #loginButton {
     font-family: 'Nunito', sans-serif;
 }
 
+#user {
+    text-align: right;
+}
+
 #motto {
     text-align: center;
     font-size: 3.0em;
