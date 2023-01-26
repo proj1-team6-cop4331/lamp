@@ -14,14 +14,14 @@ registerButton.addEventListener("click", function() {
 
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
-        firstname: firstName,
+        firstName: firstName,
         lastName: lastName,
         login: username,
         password: password,
     };
 
     var jsonPayload = JSON.stringify(packageItUp);
-    
+
     var url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/Register.php";
     
     // Create a request
