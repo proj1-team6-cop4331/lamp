@@ -36,11 +36,13 @@
     <div id="signIn">
         <h2 id="retUser"><em>Returning user?</em> <br />
         Login here!</h2>
-        <label class="login-label">Username:</label><br>
-        <input id="enterUsername" type="text"><br>
-        <label class="login-label">Password:</label><br>
-        <input id="enterPassword" type="password">
-        <button id="loginButton">Login</button>
+        <form id = "loginForm">
+            <label class="login-label">Username:</label><br>
+            <input id="enterUsername" type="text"><br>
+            <label class="login-label">Password:</label><br>
+            <input id="enterPassword" type="password">
+            <button type = "button" id = "loginButton">Login</button>
+        </form>
     </div>
     <div class="info">
         <h1 id="motto">Keeping you in touch with your people!</h1>
@@ -51,18 +53,21 @@
             our contact manager will keep your information secure- no more lost sticky notes or broken phones.
         </p>
         <p id="regNow"><b>Register now for free!</b></p>
-        <label class="register-label">First Name:</label><br />
-        <input type="text" id="regFirstName" /><br />
-        <label class="register-label">Last Name:</label><br />
-        <input type="text" id="regLastName" /><br />
-        <label id = "registerUsername" class="register-label">Create Username:</label><br />
-        <input type="text" id="regUsername" /><br />
-        <label class="register-label">
-            Create Password (Must be 8 characters or more, must contain at least one
-            uppercase letter):
-        </label>
-        <input id = "regPassword" type="password" id="regPassword" /><br />
-        <button id="regButton">Register</button>
+        <form id = "register-form">
+            <label class="register-label">First Name:</label><br />
+            <input type="text" id="regFirstName" /><br />
+            <label class="register-label">Last Name:</label><br />
+            <input type="text" id="regLastName" /><br />
+            <label id = "registerUsername" class="register-label">Create Username:</label><br />
+            <input type="text" id="regUsername" /><br />
+            <label class="register-label">
+                Create Password (Must be 8 characters or more, must contain at least one
+                uppercase letter):
+            </label><br />
+            <input id = "regPassword" type="password" id="regPassword" /><br />
+            <button type = "button" id = "regButton">Register</button>
+        </form>
+        
     </div>
     <footer>
         <script type="text/javascript" src="js/login.js"></script>
