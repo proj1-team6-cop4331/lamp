@@ -1,4 +1,4 @@
-var loginButton = document.querySelector("#registerButton");
+var registerButton = document.querySelector("#regButton");
 
 registerButton.addEventListener("click", function() {
     var firstName = document.querySelector("#regFirstName").value;
@@ -6,6 +6,10 @@ registerButton.addEventListener("click", function() {
     var username = document.querySelector("#regUsername").value;
     var password = document.querySelector("#regPassword").value;
 
+    if (password.length < 8) {
+        console.log("Your password isn't long enough.");
+        return;
+    }
     console.log("Hi " + firstName + " " + lastName + ", let's make an account for you.");
 
     // Create a javascript object containing the stuff we want to send to the API
@@ -17,8 +21,7 @@ registerButton.addEventListener("click", function() {
     };
 
     var jsonPayload = JSON.stringify(packageItUp);
-
-    // This url doesn't seem to work. Is it supposed to be "lamp-cop4331.skyclo.dev/LAMPAPI/Login.php?"
+    
     var url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/Register.php";
     
     // Create a request
