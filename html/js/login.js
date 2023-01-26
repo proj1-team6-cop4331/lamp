@@ -65,7 +65,3 @@ loginButton.addEventListener("click", function() {
 function onSuccess() {
     console.log("now, we'll load up the next web page!");
 }
-
-function fillUser() {
-    document.getElementById('user').innerHTML = "Welcome back, " + window.localStorage.getItem("first") + "!";
-}
