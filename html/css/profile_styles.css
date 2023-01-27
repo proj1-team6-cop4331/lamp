@@ -1,0 +1,36 @@
+#user {
+    text-align: right;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin-right: 30px;
+}
+
+#logout {
+    float: right;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+#searchAddBar {
+    margin-top: 40px;
+    margin-left: 25%;
+}
+
+#searchAddBar > input:placeholder-shown {
+    font-style: italic;
+}
+
+input#searchBar {
+    width: 40%;
+}
+
+#menuBox {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    background-color: lightgrey;
+    border: 7px #898989 ridge;
+}

@@ -8,10 +8,6 @@ h1, label, #loginButton {
     font-family: 'Nunito', sans-serif;
 }
 
-#user {
-    text-align: right;
-}
-
 #motto {
     text-align: center;
     font-size: 3.0em;
@@ -53,10 +49,11 @@ h1, label, #loginButton {
     display: inline;
 }
 
-h3 {
+.logo-text > h3 {
     display: inline;
     width: 1vw;
 }
+
 #logo {
     width: 70%;
     height: 100%;
@@ -143,6 +140,11 @@ h3 {
     width : 85%;
 }
 
+#invalidLabel {
+    color: maroon;
+    display: none;
+}
+
 #regButton {
     border-radius: 5px;
     margin-top: 5px;
@@ -152,6 +154,10 @@ h3 {
 
 #regButton:hover {
     background-color: #b5b5b5;
+}
+
+button:active {
+    padding: 3px 4px 3px 6px;
 }
 
 input {
@@ -177,4 +183,8 @@ h1 {
     font-size: 24px;
     width: 50%;
     margin-bottom: 15px;
+}
+
+#loginButton:hover {
+    background-color: #D9DCFF;
 }

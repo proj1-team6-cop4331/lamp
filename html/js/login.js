@@ -37,6 +37,7 @@ loginButton.addEventListener("click", function() {
                 // The API couldn't find a user.
                 if (userId < 1) {
                     console.log("User/Password combination incorrect");
+                    document.getElementById("invalidLabel").setAttribute("display", "block");
 					return;
                 }
 
