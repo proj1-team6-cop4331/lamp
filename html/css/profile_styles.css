@@ -16,6 +16,11 @@
     margin-left: 25%;
 }
 
+#searchAddBar button {
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
 #searchAddBar > input:placeholder-shown {
     font-style: italic;
 }
