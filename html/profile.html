@@ -36,11 +36,25 @@
         <div id="searchAddBar">
             <label id="searchLabel">Search</label>
             <input id="searchBar" type="text" placeholder="Search Contacts/Users"/>
-            <img src="https://lamp-cop4331.skyclo.dev/images/find-g6ac20d510_640.png" onclick="doSearch();" title="Search"/>
+            <img id = "searchButton" src="https://lamp-cop4331.skyclo.dev/images/find-g6ac20d510_640.png" onclick="doSearch();" title="Search"/>
             <button type="button" onclick="createContact();">Add Contact</button>
+            <button type="button" onclick="addPlaceholder();">Add Placeholder (Test)</button>
         </div>
         <div id="menuBox">
+            <div id = "grid">
+                <div class = "header">First Name</div>
+                <div class = "header">Last Name</div>
+                <div class = "header">Phone #</div>
+                <div class = "header">Email</div>
+                <div class = "header">Options</div>
 
+                <div>Placeholder</div>
+                <div>Placeholder</div>
+                <div>Placeholder</div>
+                <div>Placeholder</div>
+                <div>Placeholder</div>
+
+            </div>
         </div>
         <footer>
             <script type="text/javascript" src="js/profile.js"></script>
