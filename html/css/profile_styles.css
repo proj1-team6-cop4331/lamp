@@ -54,7 +54,6 @@ input#searchBar {
 }
 
 
-
 #grid > * {
     margin: 10px 10px 0px 10px;
 }
@@ -64,3 +63,18 @@ input#searchBar {
     border-bottom-style: solid;
     border-bottom-color: gray;
 }
+
+.checkOrX {
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkOrX > * {
+    width: 3vw;
+    cursor: pointer;
+}
+
+.hide, .hide > * {
+    display: none;
+}
+

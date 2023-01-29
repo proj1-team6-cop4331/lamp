@@ -2,10 +2,6 @@ function fillUser() {
     document.getElementById('user').innerHTML = "Welcome back, " + window.localStorage.getItem("first") + "!";
 }
 
-function doSearch() {
-    console.log("Normally we would search for contacts here");
-}
-
 function doLogout() {
     console.log("Logout button was pressed");
 }
