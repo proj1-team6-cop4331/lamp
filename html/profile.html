@@ -36,14 +36,33 @@
         <div id="searchAddBar">
             <label id="searchLabel">Search</label>
             <input id="searchBar" type="text" placeholder="Search Contacts/Users"/>
-            <img src="https://lamp-cop4331.skyclo.dev/images/find-g6ac20d510_640.png" onclick="doSearch();" title="Search"/>
-            <button type="button" onclick="createContact();">Add Contact</button>
+            <img id = "searchButton" src="https://lamp-cop4331.skyclo.dev/images/find-g6ac20d510_640.png" onclick="doSearch();" title="Search"/>
+            <button id = "createButton" type="button" onclick="toggleCreation();">Add Contact</button>
+            <button type="button" onclick="addPlaceholder();">Add Placeholder (Test)</button>
         </div>
         <div id="menuBox">
+            <div id = "grid">
+                <div class = "header">First Name</div>
+                <div class = "header">Last Name</div>
+                <div class = "header">Phone #</div>
+                <div class = "header">Email</div>
+                <div class = "header">Options</div>
 
+                <input class = "hide create" type = "text">
+                <input class = "hide create" type = "text">
+                <input class = "hide create" type = "text">
+                <input class = "hide create" type = "text">
+                <div id = "checkOrX" class = "hide create">
+                    <img id = "check" src = "images/check_button.png" onclick="accept();">
+                    <img id = "x" src = "images/delete_button.png" onclick="toggleCreation();">
+                </div>
+
+            </div>
         </div>
         <footer>
             <script type="text/javascript" src="js/profile.js"></script>
+            <script type="text/javascript" src="js/add.js"></script>
+            <script type="text/javascript" src="js/search.js"></script>
         </footer>
     </body>
 </html>

@@ -49,7 +49,7 @@ h1, label, #loginButton {
     display: inline;
 }
 
-.logo-text > h3 {
+.logo-text {
     display: inline;
     width: 1vw;
 }
