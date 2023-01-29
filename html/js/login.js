@@ -1,7 +1,8 @@
 var loginButton = document.querySelector("#loginButton");
 let firstname = '';
 
-loginButton.addEventListener("click", function() {
+loginButton.addEventListener("click", function () {
+
     var username = document.querySelector("#enterUsername").value;
     var password = document.querySelector("#enterPassword").value;
 
@@ -37,7 +38,7 @@ loginButton.addEventListener("click", function() {
                 // The API couldn't find a user.
                 if (userId < 1) {
                     console.log("User/Password combination incorrect");
-                    document.getElementById("invalidLabel").setAttribute("display", "block");
+                    document.getElementById("invalidLabel").style.display = "block";
 					return;
                 }
 
@@ -60,7 +61,7 @@ loginButton.addEventListener("click", function() {
     catch(theError) {
         console.error(theError.message);
     }
-
+    
 });
 
 function onSuccess() {

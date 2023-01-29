@@ -143,6 +143,8 @@ h1, label, #loginButton {
 #invalidLabel {
     color: maroon;
     display: none;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
 
 #regButton {
