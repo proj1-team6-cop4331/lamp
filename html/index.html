@@ -23,14 +23,15 @@
 <body>
     <div id="head-bar">
         <div id="corner-logo">
-            <a id = "logo-image" href="index.html"><img src="https://lamp-cop4331.skyclo.dev/images/5668024_58191.jpg" id="logo" title="Takes you back to homepage"/></a>
+            <a href="index.html" title="Takes you back to homepage">
+            <img src="https://lamp-cop4331.skyclo.dev/images/5668024_58191.jpg" id="logo" title="Takes you back to homepage" /></a>
             <h3 class="logo-text">C</h3>
             <h3 class="logo-text">O</h3>
             <h3 class="logo-text">P</h3>
         </div>
         <h1>Contact Our People</h1>
     </div>
-    <div id = "main">
+    <div id="main">
         <div class="info">
             <h2 id="motto">Keeping you in touch with your people!</h2>
             <br />
@@ -40,31 +41,34 @@
                 our contact manager will keep your information secure- no more lost sticky notes or broken phones.
             </p>
             <p id="regNow"><b>Register now for free!</b></p>
-            <form id = "register-form">
+            <form id="register-form">
                 <label class="register-label">First Name:</label><br />
                 <input type="text" id="regFirstName" /><br />
                 <label class="register-label">Last Name:</label><br />
                 <input type="text" id="regLastName" /><br />
-                <label id = "registerUsername" class="register-label">Create Username:</label><br />
+                <label id="registerUsername" class="register-label">Create Username:</label><br />
                 <input type="text" id="regUsername" /><br />
                 <label class="register-label">
                     Create Password (Must be 8 characters or more, must contain at least one
                     uppercase letter):
                 </label><br />
-                <input id = "regPassword" type="password" id="regPassword" /><br />
-                <button type = "button" id = "regButton">Register</button>
+                <input id="regPassword" type="password" /><br />
+                <label id="invalidPass">Your password must be at least 8 characters!</label>
+                <button type="button" id="regButton">Register</button>
             </form>
         </div>
         <div id="signIn">
-            <h2 id="retUser"><em>Returning user?</em> <br />
-            Login here!</h2>
-            <form id = "loginForm">
+            <h2 id="retUser">
+                <em>Returning user?</em> <br />
+                Login here!
+            </h2>
+            <form id="loginForm">
                 <label class="login-label">Username:</label><br>
                 <input id="enterUsername" type="text"><br>
                 <label class="login-label">Password:</label><br>
                 <input id="enterPassword" type="password">
                 <label id="invalidLabel">Invalid username/password entered!</label>
-                <button type = "button" id = "loginButton">Login</button>
+                <button type="button" id="loginButton">Login</button>
             </form>
         </div>
     </div>

@@ -7,8 +7,14 @@
 
 #logout {
     float: right;
+    width: 6%;
     margin-right: 30px;
     border-radius: 5px;
+}
+
+#logout:hover {
+    background-color: darkred;
+    color: white;
 }
 
 #searchAddBar {

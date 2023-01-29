@@ -7,10 +7,9 @@ registerButton.addEventListener("click", function() {
     var password = document.querySelector("#regPassword").value;
 
     if (password.length < 8) {
-        console.log("Your password isn't long enough.");
+        document.getElementById("invalidPass").style.display = "block";
         return;
     }
-    console.log("Hi " + firstName + " " + lastName + ", let's make an account for you.");
 
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
@@ -46,10 +45,10 @@ registerButton.addEventListener("click", function() {
 					return;
                 }
 
-                else {
-                    console.log("You were registered! Your id is " + userId);
-                    window.location.href = 'profile.html';
-                    onSuccess();
+                else {                   
+                    window.localStorage.setItem("first", firstName);
+                    window.localStorage.setItem("id", userId);
+                    window.location.href = "profile.html";
                 }
             }
         }
@@ -64,7 +63,3 @@ registerButton.addEventListener("click", function() {
     }
 
 });
-
-function onSuccess() {
-    console.log("Feel free to log in.");
-}
