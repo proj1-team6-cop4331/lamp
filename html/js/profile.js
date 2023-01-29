@@ -3,8 +3,14 @@ function fillUser() {
 }
 
 function doLogout() {
-    console.log("Logout button was pressed");
+    window.localStorage.clear();
+    window.location.href = "index.html";
 }
+
+window.addEventListener('beforeunload', function () {
+    window.localStorage.clear();
+    window.location.href = "index.html";
+});
 
 function createContact() {
     console.log("Add Contact was pressed, we need to add the form");

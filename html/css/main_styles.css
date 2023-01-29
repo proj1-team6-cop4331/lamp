@@ -147,6 +147,12 @@ h1, label, #loginButton {
     margin-right: 10px;
 }
 
+#invalidPass {
+    color: maroon;
+    display: none;
+    margin-bottom: 15px;
+}
+
 #regButton {
     border-radius: 5px;
     margin-top: 5px;

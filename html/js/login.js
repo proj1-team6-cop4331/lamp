@@ -45,9 +45,8 @@ loginButton.addEventListener("click", function () {
                 else {
                     var fn = jsonObject.firstName;
                     var ln = jsonObject.lastName;
-                    console.log("Found it! Your name is " + fn + " " + ln + ".");
-                    onSuccess();
                     window.localStorage.setItem("first", fn);
+                    window.localStorage.setItem("id", userId);
                     window.location.href = "profile.html";
                 }
             }
@@ -63,7 +62,3 @@ loginButton.addEventListener("click", function () {
     }
     
 });
-
-function onSuccess() {
-    console.log("now, we'll load up the next web page!");
-}
