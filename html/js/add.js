@@ -1,3 +1,5 @@
+import {trash} from "delete.js";
+
 let hidden = true;
 function toggleCreation() {
     // Create a template to type in a contact
@@ -8,7 +10,6 @@ function toggleCreation() {
     }
 
     document.getElementById("checkOrX").classList.toggle("checkOrX");
-
     hidden = !hidden;
 }
 
@@ -19,8 +20,18 @@ function accept() {
         lastName: objects[1].value,
         phone: objects[2].value,
         email: objects[3].value,
-        options: ""
     }
+
+    let options = document.createElement("div");
+    options.classList.add("editAndDelete");
+    let editButton = document.createElement("img");
+    editButton.setAttribute("src", "images/edit.png");
+    options.appendChild(editButton);
+
+    let deleteButton = document.createElement("img");
+    deleteButton.setAttribute("src", "images/delete.png");
+    deleteButton.addEventListener("click", trash);
+    options.appendChild(deleteButton);
 
     let grid = document.getElementById("grid");
 
@@ -29,6 +40,8 @@ function accept() {
         newDiv.innerHTML = contact[property];
         grid.appendChild(newDiv);
     }
+
+    grid.appendChild(options);
 
     toggleCreation();
 }
