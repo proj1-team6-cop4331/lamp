@@ -1,5 +1,3 @@
-import {trash} from "delete.js";
-
 let hidden = true;
 function toggleCreation() {
     // Create a template to type in a contact
@@ -30,8 +28,8 @@ function accept() {
 
     let deleteButton = document.createElement("img");
     deleteButton.setAttribute("src", "images/delete.png");
-    deleteButton.addEventListener("click", trash);
     options.appendChild(deleteButton);
+    options.lastChild.addEventListener("click", trash);
 
     let grid = document.getElementById("grid");
 
@@ -44,4 +42,20 @@ function accept() {
     grid.appendChild(options);
 
     toggleCreation();
+
+    // We still have to send these over to the API
+    // so they can get added to the database.
+}
+
+function trash() {
+    let current = this.parentNode;
+    let deleteThese = [];
+    for (let i = 0; i < 5; i++) {
+        deleteThese[i] = current;
+        current = current.previousSibling;
+    }
+
+    for (let i = 0; i < deleteThese.length; i++) {
+        grid.removeChild(deleteThese[i]);
+    }
 }
