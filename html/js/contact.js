@@ -1,6 +1,8 @@
 let hidden = true;
+
+// Show a template for the user to type in a contact
 function toggleCreation() {
-    // Create a template to type in a contact
+    
     let list = document.querySelectorAll(".create");
     for (let i = 0; i < list.length; i++) {
         list[i].classList.toggle("hide");
@@ -11,6 +13,9 @@ function toggleCreation() {
     hidden = !hidden;
 }
 
+// The user has created a new contact.
+// We need to create DOM nodes for the new contact
+// so it can be displayed.
 function accept() {
     let objects = document.querySelectorAll(".hide, .create");
     let contact = {
@@ -29,10 +34,14 @@ function accept() {
     let deleteButton = document.createElement("img");
     deleteButton.setAttribute("src", "images/delete.png");
     options.appendChild(deleteButton);
+
+    // If the user presses the delete button on a contact,
+    // store data on which contact was selected.
     options.lastChild.addEventListener("click", trash);
 
     let grid = document.getElementById("grid");
 
+    // Create a new div for each field of the contact.
     for (const property in contact) {
         let newDiv = document.createElement("div");
         newDiv.innerHTML = contact[property];
@@ -50,6 +59,9 @@ function accept() {
 function trash() {
     let current = this.parentNode;
     let deleteThese = [];
+
+    // Traverse the DOM Nodes for the contact
+    // we're supposed to delete.
     for (let i = 0; i < 5; i++) {
         deleteThese[i] = current;
         current = current.previousSibling;

@@ -1,10 +1,10 @@
-var registerButton = document.querySelector("#regButton");
+let registerButton = document.querySelector("#regButton");
 
 registerButton.addEventListener("click", function() {
-    var firstName = document.querySelector("#regFirstName").value;
-    var lastName = document.querySelector("#regLastName").value;
-    var username = document.querySelector("#regUsername").value;
-    var password = document.querySelector("#regPassword").value;
+    let firstName = document.querySelector("#regFirstName").value;
+    let lastName = document.querySelector("#regLastName").value;
+    let username = document.querySelector("#regUsername").value;
+    let password = document.querySelector("#regPassword").value;
 
     if (password.length < 8) {
         document.getElementById("invalidPass").style.display = "block";
@@ -12,19 +12,19 @@ registerButton.addEventListener("click", function() {
     }
 
     // Create a javascript object containing the stuff we want to send to the API
-    var packageItUp = {
+    let packageItUp = {
         firstName: firstName,
         lastName: lastName,
         login: username,
         password: password,
     };
 
-    var jsonPayload = JSON.stringify(packageItUp);
+    let jsonPayload = JSON.stringify(packageItUp);
 
-    var url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/Register.php";
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/Register.php";
     
     // Create a request
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
 
     // What the heck does this do?
@@ -36,7 +36,7 @@ registerButton.addEventListener("click", function() {
             if (this.readyState == 4 && this.status == 200) {
 
                 // When we get a response from API, we'll get an id back.
-                var jsonObject = JSON.parse(xhr.responseText);
+                let jsonObject = JSON.parse(xhr.responseText);
                 userId = jsonObject.id;
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)

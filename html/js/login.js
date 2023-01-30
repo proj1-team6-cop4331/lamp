@@ -1,26 +1,26 @@
-var loginButton = document.querySelector("#loginButton");
+let loginButton = document.querySelector("#loginButton");
 let firstname = '';
 
 loginButton.addEventListener("click", function () {
 
-    var username = document.querySelector("#enterUsername").value;
-    var password = document.querySelector("#enterPassword").value;
+    let username = document.querySelector("#enterUsername").value;
+    let password = document.querySelector("#enterPassword").value;
 
     console.log("Your username was " + username + " and your password was " + password);
 
     // Create a javascript object containing the stuff we want to send to the API
-    var packageItUp = {
+    let packageItUp = {
         login: username,
         password: password,
     };
 
-    var jsonPayload = JSON.stringify(packageItUp);
+    let jsonPayload = JSON.stringify(packageItUp);
 
     // This url doesn't seem to work. Is it supposed to be "lamp-cop4331.skyclo.dev/LAMPAPI/Login.php?"
-    var url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/Login.php";
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/Login.php";
     
     // Create a request
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
 
     // What the heck does this do?
@@ -32,7 +32,7 @@ loginButton.addEventListener("click", function () {
             if (this.readyState == 4 && this.status == 200) {
 
                 // When we get a response from API, we'll get an id back.
-                var jsonObject = JSON.parse(xhr.responseText);
+                let jsonObject = JSON.parse(xhr.responseText);
                 userId = jsonObject.id;
 
                 // The API couldn't find a user.
@@ -43,8 +43,8 @@ loginButton.addEventListener("click", function () {
                 }
 
                 else {
-                    var fn = jsonObject.firstName;
-                    var ln = jsonObject.lastName;
+                    let fn = jsonObject.firstName;
+                    let ln = jsonObject.lastName;
                     window.localStorage.setItem("first", fn);
                     window.localStorage.setItem("id", userId);
                     window.location.href = "profile.html";
