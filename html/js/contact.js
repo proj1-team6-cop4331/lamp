@@ -23,8 +23,34 @@ function accept() {
         lastName: objects[1].value,
         phone: objects[2].value,
         email: objects[3].value,
-        userID: window.localStorage.getItem("id")
-    };
+    }
+
+    let options = document.createElement("div");
+    options.classList.add("editAndDelete");
+    let editButton = document.createElement("img");
+    editButton.setAttribute("src", "images/edit.png");
+    options.appendChild(editButton);
+
+    let deleteButton = document.createElement("img");
+    deleteButton.setAttribute("src", "images/delete.png");
+    options.appendChild(deleteButton);
+
+    // If the user presses the delete button on a contact,
+    // store data on which contact was selected.
+    options.lastChild.addEventListener("click", trash);
+
+    let grid = document.getElementById("grid");
+
+    // Create a new div for each field of the contact.
+    for (const property in contact) {
+        let newDiv = document.createElement("div");
+        newDiv.innerHTML = contact[property];
+        grid.appendChild(newDiv);
+    }
+
+    grid.appendChild(options);
+
+    toggleCreation();
 
     // We still have to send these over to the API
     // so they can get added to the database.
@@ -32,70 +58,6 @@ function accept() {
     let jsonPayload = JSON.stringify(contact);
 
     let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/AddContact.php";
-
-    // Create a request
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-
-    // What the heck does this do?
-    xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
-
-    try {
-        // anonymous function to the gets called when the request is ready
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-
-                // When we get a response from API, we'll get an id back.
-                let jsonObject = JSON.parse(xhr.responseText);
-                error = jsonObject.err;
-
-                // The API couldn't register this new user. (Perhaps that user already exists.)
-                if (err == "") {
-                    console.log("Contact Added Successfully.");
-
-                    let options = document.createElement("div");
-                    options.classList.add("editAndDelete");
-                    let editButton = document.createElement("img");
-                    editButton.setAttribute("src", "images/edit.png");
-                    options.appendChild(editButton);
-
-                    let deleteButton = document.createElement("img");
-                    deleteButton.setAttribute("src", "images/delete.png");
-                    options.appendChild(deleteButton);
-
-                    // If the user presses the delete button on a contact,
-                    // store data on which contact was selected.
-                    options.lastChild.addEventListener("click", trash);
-
-                    let grid = document.getElementById("grid");
-
-                    // Create a new div for each field of the contact.
-                    for (let i = 0; i < 4; i++) {
-                        let newDiv = document.createElement("div");
-                        newDiv.innerHTML = contact[i];
-                        grid.appendChild(newDiv);
-                    }
-
-                    grid.appendChild(options);
-
-                    toggleCreation();
-
-                }
-
-                else {                   
-                   console.log("New contact could not be added.");
-                }
-            }
-        }
-
-        // can we put this above the "ready state change?"
-        // That would make a lot more sense.
-        xhr.send(jsonPayload);
-    }
-
-    catch(theError) {
-        console.error(theError.message);
-    }
 }
 
 function trash() {
