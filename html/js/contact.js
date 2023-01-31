@@ -54,7 +54,7 @@ function accept(skip) {
                 error = jsonObject.err;
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
-                if (err == "") {
+                if (error == "") {
                     console.log("contact added successfully");
                     appendContactList(contact);
                 }
@@ -99,9 +99,9 @@ function appendContactList(contact) {
     let grid = document.getElementById("grid");
 
     // Create a new div for each field of the contact.
-    for (const property in contact) {
+    for (let i = 0; i < 4; i++) {
         let newDiv = document.createElement("div");
-        newDiv.innerHTML = contact[property];
+        newDiv.innerHTML = contact[i];
         grid.appendChild(newDiv);
     }
 
