@@ -23,7 +23,8 @@ function accept() {
         lastName: objects[1].value,
         phone: objects[2].value,
         email: objects[3].value,
-    }
+        userID: window.localStorage.getItem("id")
+    };
 
     // We still have to send these over to the API
     // so they can get added to the database.
@@ -69,9 +70,9 @@ function accept() {
                     let grid = document.getElementById("grid");
 
                     // Create a new div for each field of the contact.
-                    for (const property in contact) {
+                    for (let i = 0; i < 4; i++) {
                         let newDiv = document.createElement("div");
-                        newDiv.innerHTML = contact[property];
+                        newDiv.innerHTML = contact[i];
                         grid.appendChild(newDiv);
                     }
 
