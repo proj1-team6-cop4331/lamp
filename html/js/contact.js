@@ -81,7 +81,7 @@ function accept(skip) {
 // We need to create DOM nodes for the new contact
 // so it can be displayed.
 function appendContactList(contact) {
-    
+    console.log(contact[0]);
     let options = document.createElement("div");
     options.classList.add("editAndDelete");
     let editButton = document.createElement("img");
@@ -99,10 +99,13 @@ function appendContactList(contact) {
     let grid = document.getElementById("grid");
 
     // Create a new div for each field of the contact.
-    for (let i = 0; i < 4; i++) {
-        let newDiv = document.createElement("div");
-        newDiv.innerHTML = contact[i];
-        grid.appendChild(newDiv);
+    let ind = 1;
+    for (const field in contact) {
+        if (ind <= 4) {
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = contact[field];
+            grid.appendChild(newDiv);
+        } ind++;
     }
 
     grid.appendChild(options);
