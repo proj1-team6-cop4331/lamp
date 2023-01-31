@@ -13,18 +13,75 @@ function toggleCreation() {
     hidden = !hidden;
 }
 
-// The user has created a new contact.
-// We need to create DOM nodes for the new contact
-// so it can be displayed.
-function accept() {
+// Reach out to the API and see if we can add a contact.
+// If so, call appendContactList().
+function accept(skip) {
     let objects = document.querySelectorAll(".hide, .create");
     let contact = {
         firstName: objects[0].value,
         lastName: objects[1].value,
         phone: objects[2].value,
         email: objects[3].value,
+        userID: window.localStorage.getItem("id")
     }
 
+    if (skip) {
+        appendContactList(contact);
+        return;
+    }
+
+    // We still have to send these over to the API
+    // so they can get added to the database.
+
+    let jsonPayload = JSON.stringify(contact);
+
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/AddContact.php";
+
+    // Create a request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    // What the heck does this do?
+    xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
+
+    try {
+        // anonymous function to the gets called when the request is ready
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                // When we get a response from API, we'll get an id back.
+                let jsonObject = JSON.parse(xhr.responseText);
+                error = jsonObject.err;
+
+                // The API couldn't register this new user. (Perhaps that user already exists.)
+                if (err == "") {
+                    console.log("contact added successfully");
+                    appendContactList(contact);
+                }
+
+                else {                   
+                    console.log("We had an issue adding that contact.");
+                }
+
+                return;
+            }
+        }
+
+        // can we put this above the "ready state change?"
+        // That would make a lot more sense.
+        xhr.send(jsonPayload);
+    }
+
+    catch(theError) {
+        console.error(theError.message);
+    }
+}
+
+// The user has created a new contact.
+// We need to create DOM nodes for the new contact
+// so it can be displayed.
+function appendContactList(contact) {
+    
     let options = document.createElement("div");
     options.classList.add("editAndDelete");
     let editButton = document.createElement("img");
@@ -51,13 +108,6 @@ function accept() {
     grid.appendChild(options);
 
     toggleCreation();
-
-    // We still have to send these over to the API
-    // so they can get added to the database.
-
-    let jsonPayload = JSON.stringify(contact);
-
-    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/AddContact.php";
 }
 
 function trash() {
