@@ -51,10 +51,10 @@ function accept(skip) {
 
                 // When we get a response from API, we'll get an id back.
                 let jsonObject = JSON.parse(xhr.responseText);
-                error = jsonObject.err;
+                let err = jsonObject.error;
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
-                if (error == "") {
+                if (err == "") {
                     console.log("contact added successfully");
                     appendContactList(contact);
                 }
