@@ -28,7 +28,7 @@ function onLogin() {
 
                 // When we get a response from API, we'll get an id back.
                 let jsonObject = JSON.parse(xhr.responseText);
-                let arr = jsonObject.searchResults;
+                let arr = jsonObject.results;
                 console.log(arr);
 
                 for (const contact in arr) {
