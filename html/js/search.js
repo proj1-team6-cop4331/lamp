@@ -8,8 +8,16 @@ function doSearch() {
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
         search: searchString,
-        id: window.localStorage.getItem("id")
+        userId: window.localStorage.getItem("id")
     };
+
+    let jsonPayload = JSON.stringify(packageItUp);
+
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/SearchContact.php";
+    
+    // Create a request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
 
     // What the heck does this do?
     xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
