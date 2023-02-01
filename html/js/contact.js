@@ -31,12 +31,12 @@ function onLogin() {
                 let arr = jsonObject.results;
                 console.log(arr);
 
-                for (const contact in arr) {
-                    console.log(contact);
+                for (let i = 0; i < arr.length; i++) {
+                    console.log(arr[i]);
                 }
 
-                for (const contact in arr) {
-                    appendContactList(contact);
+                for (let i = 0; i < arr.length; i++) {
+                    appendContactList(arr[i]);
                 }
             }
         }
