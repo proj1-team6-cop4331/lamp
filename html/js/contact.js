@@ -1,5 +1,56 @@
 let hidden = true;
 
+function onLogin() {
+    let userID = window.localStorage.getItem("id");
+    // Get all of the contacts for this user.
+
+    // Create a javascript object containing the stuff we want to send to the API
+    var packageItUp = {
+        search: "",
+        userId: window.localStorage.getItem("id")
+    };
+
+    let jsonPayload = JSON.stringify(packageItUp);
+
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/SearchContact.php";
+    
+    // Create a request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    // What the heck does this do?
+    xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
+
+    try {
+        // anonymous function to the gets called when the request is ready
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                // When we get a response from API, we'll get an id back.
+                let jsonObject = JSON.parse(xhr.responseText);
+                let arr = jsonObject.searchResults;
+                console.log(arr);
+
+                for (const contact in arr) {
+                    console.log(contact);
+                }
+
+                for (const contact in arr) {
+                    appendContactList(contact);
+                }
+            }
+        }
+
+        // can we put this above the "ready state change?"
+        // That would make a lot more sense.
+        xhr.send(jsonPayload);
+    }
+
+    catch(theError) {
+        console.error(theError.message);
+    }
+}
+
 // Show a template for the user to type in a contact
 function toggleCreation() {
     
