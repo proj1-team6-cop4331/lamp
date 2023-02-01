@@ -29,7 +29,7 @@ function fillUser() {
                 var jsonObject = JSON.parse(xhr.responseText);
 
                 for (const field in jsonObject) {
-                    console.log(field);
+                    console.log(jsonObject[field]);
                 }
             }
         }
