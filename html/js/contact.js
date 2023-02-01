@@ -51,6 +51,7 @@ function accept(skip) {
 
                 // When we get a response from API, we'll get an id back.
                 let jsonObject = JSON.parse(xhr.responseText);
+                console.log(jsonObject);
                 let err = jsonObject.error;
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
