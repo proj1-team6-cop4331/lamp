@@ -15,7 +15,7 @@ function toggleCreation() {
 
 // Reach out to the API and see if we can add a contact.
 // If so, call appendContactList().
-function accept(skip) {
+function accept() {
     let objects = document.querySelectorAll(".hide, .create");
     let contact = {
         firstName: objects[0].value,
@@ -23,11 +23,6 @@ function accept(skip) {
         phone: objects[2].value,
         email: objects[3].value,
         userID: window.localStorage.getItem("id")
-    }
-
-    if (skip) {
-        appendContactList(contact);
-        return;
     }
 
     // We still have to send these over to the API
@@ -51,7 +46,6 @@ function accept(skip) {
 
                 // When we get a response from API, we'll get an id back.
                 let jsonObject = JSON.parse(xhr.responseText);
-                console.log(jsonObject);
                 let err = jsonObject.error;
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
@@ -82,7 +76,6 @@ function accept(skip) {
 // We need to create DOM nodes for the new contact
 // so it can be displayed.
 function appendContactList(contact) {
-    console.log(contact[0]);
     let options = document.createElement("div");
     options.classList.add("editAndDelete");
     let editButton = document.createElement("img");
