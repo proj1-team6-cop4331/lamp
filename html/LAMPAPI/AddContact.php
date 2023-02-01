@@ -21,9 +21,14 @@ if ($conn->connect_error) {
     $stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $userID);
     $stmt->execute();
     $result = $stmt->get_result();
+
+    $getInfo = $result->fetch_assoc();
+    $finalRes = '{"ID" : "' . $getInfo["ID"] . '"}';
+
     $stmt->close();
     $conn->close();
-    returnWithError("");
+
+    returnWithInfo($finalRes);
 }
 
 function getRequestInfo()
@@ -40,5 +45,11 @@ function sendResultInfoAsJson($obj)
 function returnWithError($err)
 {
     $retValue = '{"error":"' . $err . '"}';
+    sendResultInfoAsJson($retValue);
+}
+
+function returnWithInfo($finalRes)
+{
+    $retValue = '{"results":[' . $finalRes . '],"error":""}';
     sendResultInfoAsJson($retValue);
 }

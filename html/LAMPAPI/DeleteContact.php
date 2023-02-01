@@ -4,9 +4,7 @@
 $inData = getRequestInfo();
 
 // Retrieve info for delete contact
-$firstName = $inData["firstName"];
-$lastName = $inData["lastName"];
-$userID = $inData["userID"];
+$ID = $inData["ID"];
 
 // Change for project but connecting to Database
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
@@ -15,8 +13,8 @@ $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
-    $stmt = $conn->prepare("DELETE FROM Contacts firstName=? AND lastName=? AND userId=?");
-    $stmt->bind_param("ssi", $firstName, $lastName, $userID);
+    $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID=?");
+    $stmt->bind_param("i", $ID);
     $stmt->execute();
     $stmt->close();
     $conn->close();
