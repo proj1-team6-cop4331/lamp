@@ -1,4 +1,3 @@
-let hidden = true;
 
 function onLogin() {
     let userID = window.localStorage.getItem("id");
@@ -61,7 +60,6 @@ function toggleCreation() {
     }
 
     document.getElementById("checkOrX").classList.toggle("checkOrX");
-    hidden = !hidden;
 }
 
 // Reach out to the API and see if we can add a contact.
@@ -140,6 +138,7 @@ function appendContactList(contact) {
     // If the user presses the delete button on a contact,
     // store data on which contact was selected.
     options.lastChild.addEventListener("click", trash);
+    options.setAttribute("data-id", contact.ID);
 
     let grid = document.getElementById("grid");
 
@@ -161,6 +160,8 @@ function appendContactList(contact) {
 function trash() {
     let current = this.parentNode;
     let deleteThese = [];
+    let deleteThisID = current.dataset.id;
+    console.log("We're gonna delete the contact with ID:n " + deleteThisID);
 
     // Traverse the DOM Nodes for the contact
     // we're supposed to delete.
