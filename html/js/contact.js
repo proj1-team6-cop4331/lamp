@@ -172,7 +172,7 @@ function edit() {
     for (let i = 0; i < 4; i++) {
         let textField = document.createElement("input");
         textField.setAttribute("type", "text");
-        textField.innerHTML = replaceThese[i].innerHTML;
+        textField.value = replaceThese[i].innerHTML;
         grid.replaceChild(textField, replaceThese[i]);
     }
 
@@ -180,20 +180,26 @@ function edit() {
     confirmButton.setAttribute("src", "images/check_button.png");
     confirmButton.setAttribute("width", "50px");
     confirmButton.addEventListener("click", confirmEdit);
-    current.replaceChild(confirmButton, this);
+    this.parentNode.replaceChild(confirmButton, this);
 
 }
 
 function confirmEdit() {
     let current = this.parentNode;
+    let replaceThese = [];
 
     // Traverse the DOM across the row
     // and replace the inputs with divs.
-    for (let i = 0; i < 4; i++) {
+
+    for (let i = 3; i >= 0; i--) {   
         current = current.previousSibling;
+        replaceThese[i] = current;
+    }
+
+    for (let i = 0; i < 4; i++) {
         let newDiv = document.createElement("div");
-        textField.innerHTML = current.innerHTML;
-        grid.replaceChild(newDiv, current);
+        newDiv.innerHTML = replaceThese[i].value;
+        grid.replaceChild(newDiv, replaceThese[i]);
     }
 }
 
