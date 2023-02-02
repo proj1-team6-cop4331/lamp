@@ -22,8 +22,11 @@ if ($conn->connect_error) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $getInfo = $result->fetch_assoc();
-    $finalRes = '{"ID" : "' . $getInfo["ID"] . '"}';
+    //Fetching all the rows as arrays
+    $finalRes = "";
+    while ($row = $result->fetch_assoc()) {
+        $finalRes .= '{"ID" : "' . $row["ID"] . '"}';
+    }
 
     $stmt->close();
     $conn->close();
