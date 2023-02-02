@@ -180,10 +180,8 @@ function edit() {
     confirmButton.setAttribute("src", "images/check_button.png");
     confirmButton.setAttribute("width", "50px");
     confirmButton.addEventListener("click", confirmEdit);
+    this.nextSibling.classList.toggle("hide");
     this.parentNode.replaceChild(confirmButton, this);
-    this.parentNode.lastChild.classList.toggle("hide");
-
-
 }
 
 function confirmEdit() {
@@ -208,8 +206,8 @@ function confirmEdit() {
     editButton.setAttribute("src", "images/edit.png");
     confirmButton.addEventListener("click", confirmEdit);
     this.parentNode.replaceChild(editButton, this);
+    this.nextSibling.classList.toggle("hide");
     this.parentNode.firstChild.addEventListener("click", edit);
-    this.parentNode.lastChild.classList.toggle("hide");
 }
 
 function trash() {
