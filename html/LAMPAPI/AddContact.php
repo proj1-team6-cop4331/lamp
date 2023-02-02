@@ -22,7 +22,7 @@ if ($conn->connect_error) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $getInfo = $result->fetch_assoc();
+    $getInfo = $result->fetch_array();
     $finalRes = '{"ID" : "' . $getInfo["ID"] . '"}';
 
     $stmt->close();
