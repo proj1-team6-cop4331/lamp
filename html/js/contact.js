@@ -222,7 +222,7 @@ function trash() {
                 // we're supposed to delete.
                 deleteThese = [];
                 for (let i = 0; i < 5; i++) {
-                    deleteThese[i].push(current);
+                    deleteThese.push(current);
                     current = current.previousSibling;
                 }
 
