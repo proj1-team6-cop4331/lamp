@@ -189,7 +189,19 @@ function confirmEdit() {
     let current = this.parentNode;
     let replaceThese = [];
 
-    let justTheID = {ID: current.dataset.id};
+    for (let i = 3; i >= 0; i--) {   
+        current = current.previousSibling;
+        replaceThese[i] = current;
+    }
+
+    let newContact = {
+        firstName:  replaceThese[0],
+        lastName: replaceThese[1],
+        phone: replaceThese[2],
+        mail: replaceThese[3],
+        id: current.dataset.id
+    };
+
     let jsonPayload = JSON.stringify(justTheID);
 
     let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/EditContact.php";
@@ -217,19 +229,11 @@ function confirmEdit() {
                     // Traverse the DOM across the row
                     // and replace the inputs with divs.
 
-                    for (let i = 3; i >= 0; i--) {   
-                        current = current.previousSibling;
-                        replaceThese[i] = current;
-                    }
-
                     for (let i = 0; i < 4; i++) {
                         let newDiv = document.createElement("div");
                         newDiv.innerHTML = replaceThese[i].value;
                         grid.replaceChild(newDiv, replaceThese[i]);
                     }
-
-                    console.log(outerThis);
-                    console.log(outerThis.parentNode);
 
                     let editButton = document.createElement("img");
                     editButton.setAttribute("src", "images/edit.png");
