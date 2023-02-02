@@ -181,7 +181,7 @@ function edit() {
     confirmButton.setAttribute("width", "50px");
     confirmButton.addEventListener("click", confirmEdit);
     this.parentNode.replaceChild(confirmButton, this);
-    this.nextSibling.classList.toggle("hide");
+    this.parentNode.lastChild.classList.toggle("hide");
 
 
 }
@@ -209,7 +209,7 @@ function confirmEdit() {
     confirmButton.addEventListener("click", confirmEdit);
     this.parentNode.replaceChild(editButton, this);
     this.parentNode.firstChild.addEventListener("click", edit);
-    this.nextSibling.classList.toggle("hide");
+    this.parentNode.lastChild.classList.toggle("hide");
 }
 
 function trash() {
