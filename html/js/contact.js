@@ -167,7 +167,7 @@ function edit() {
         let textField = document.createElement("input");
         textField.setAttribute("type", "text");
         textField.innerHTML = current.innerHTML;
-        grid.replaceChild(textField);
+        grid.replaceChild(current, textField);
     }
 
     let confirmButton = document.createElement("img");
