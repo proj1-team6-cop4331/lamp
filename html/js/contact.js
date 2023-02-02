@@ -220,8 +220,9 @@ function trash() {
 
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
+                deleteThese = [];
                 for (let i = 0; i < 5; i++) {
-                    deleteThese[i] = current;
+                    deleteThese[i].push(current);
                     current = current.previousSibling;
                 }
 
