@@ -195,11 +195,11 @@ function confirmEdit() {
     }
 
     let newContact = {
-        firstName:  replaceThese[0],
-        lastName: replaceThese[1],
-        phone: replaceThese[2],
-        mail: replaceThese[3],
-        id: current.dataset.id
+        id: current.dataset.id,
+        firstName:  replaceThese[0].value,
+        lastName: replaceThese[1].value,
+        phone: replaceThese[2].value,
+        mail: replaceThese[3].value,
     };
 
     let jsonPayload = JSON.stringify(newContact);
