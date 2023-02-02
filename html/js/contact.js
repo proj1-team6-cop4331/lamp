@@ -132,6 +132,7 @@ function appendContactList(contact) {
 
     // If the user presses the delete button on a contact,
     // store data on which contact was selected.
+    options.firstChild.addEventListener("click", edit);
     options.lastChild.addEventListener("click", trash);
     options.setAttribute("data-id", contact.ID);
 
@@ -152,9 +153,46 @@ function appendContactList(contact) {
     toggleCreation();
 }
 
+function edit() {
+    let current = this.parentNode;
+    let grid = current.parentNode;
+
+    let originalStrings = [];
+
+    // Traverse the DOM across the row
+    // and replace the divs with inputs
+    for (let i = 0; i < 4; i++) {
+        current = current.previousSibling;
+        originalStrings[i] = current.innerHTML;
+        let textField = document.createElement("input");
+        textField.setAttribute("type", "text");
+        textField.innerHTML = current.innerHTML;
+        grid.replaceChild(textField);
+    }
+
+    let confirmButton = document.createElement("img");
+    confirmButton.setAttribute("src", "images/check_button.png");
+    confirmButton.setAttribute("width", "50px");
+    confirmButton.addEventListener("click", confirmEdit);
+    current.replaceChild(this.parentNode,  confirmButton);
+
+}
+
+function confirmEdit() {
+    let current = this.parentNode;
+
+    // Traverse the DOM across the row
+    // and replace the inputs with divs.
+    for (let i = 0; i < 4; i++) {
+        current = current.previousSibling;
+        let newDiv = document.createElement("div");
+        textField.innerHTML = current.innerHTML;
+        grid.replaceChild(newDiv);
+    }
+}
+
 function trash() {
     let current = this.parentNode;
-    let deleteThese = [];
     let deleteThisID = current.dataset.id;
     console.log("We're gonna delete the contact with ID:n " + deleteThisID);
 
