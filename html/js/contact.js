@@ -158,16 +158,23 @@ function edit() {
     let grid = current.parentNode;
 
     let originalStrings = [];
+    let replaceThese = [];
 
     // Traverse the DOM across the row
     // and replace the divs with inputs
-    for (let i = 0; i < 4; i++) {
+
+    for (let i = 3; i >= 0; i--) {   
         current = current.previousSibling;
         originalStrings[i] = current.innerHTML;
+        replaceThese[i] = current;
+        current = next;
+    }
+
+    for (let i = 0; i < 4; i++) {
         let textField = document.createElement("input");
         textField.setAttribute("type", "text");
         textField.innerHTML = current.innerHTML;
-        grid.replaceChild(textField, current);
+        grid.replaceChild(textField, replaceThese[i]);
     }
 
     let confirmButton = document.createElement("img");
