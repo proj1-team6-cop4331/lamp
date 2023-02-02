@@ -158,7 +158,7 @@ function trash() {
     let deleteThisID = current.dataset.id;
     console.log("We're gonna delete the contact with ID:n " + deleteThisID);
 
-    let obj = {ID: deleteTheseID};
+    let obj = {ID: deleteThisID};
     let jsonPayload = JSON.stringify(obj);
 
     let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/DeleteContact.php";
