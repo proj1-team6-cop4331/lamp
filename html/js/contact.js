@@ -181,6 +181,8 @@ function edit() {
     confirmButton.setAttribute("width", "50px");
     confirmButton.addEventListener("click", confirmEdit);
     this.parentNode.replaceChild(confirmButton, this);
+    this.nextSibling.classList.toggle("hide");
+
 
 }
 
@@ -201,6 +203,13 @@ function confirmEdit() {
         newDiv.innerHTML = replaceThese[i].value;
         grid.replaceChild(newDiv, replaceThese[i]);
     }
+
+    let editButton = document.createElement("img");
+    editButton.setAttribute("src", "images/edit.png");
+    confirmButton.addEventListener("click", confirmEdit);
+    this.parentNode.replaceChild(editButton, this);
+    this.parentNode.firstChild.addEventListener("click", edit);
+    this.nextSibling.classList.toggle("hide");
 }
 
 function trash() {
