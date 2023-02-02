@@ -22,13 +22,16 @@ if ($conn->connect_error) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //Fetching all the rows as arrays
-    $finalRes = "";
-    while ($row = $result->fetch_assoc()) {
-        $finalRes .= '{"ID" : "' . $row["ID"] . '"}';
-    }
+    // Get ID by new SQL Statement 
+    $getIDStatement = $conn->prepare("SELECT ID FROM Contacts WHERE (firstName=? AND lastName=? AND phone=? AND email=? AND userID=?)");
+    $getIDStatement->bind_param("ssssi", $firstName, $lastName, $phone, $email, $userID);
+    $getIDStatement->execute();
+    $getIDResult = $getIDStatement->get_result()->fetch_assoc();
+
+    $finalRes .= '{"ID" : "' . $getIDResult["ID"] . '"}';
 
     $stmt->close();
+    $getIDStatement->close();
     $conn->close();
 
     returnWithInfo($finalRes);
