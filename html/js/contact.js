@@ -28,11 +28,6 @@ function onLogin() {
                 // When we get a response from API, we'll get an id back.
                 let jsonObject = JSON.parse(xhr.responseText);
                 let arr = jsonObject.results;
-                console.log(arr);
-
-                for (let i = 0; i < arr.length; i++) {
-                    console.log(arr[i]);
-                }
 
                 for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
@@ -163,14 +158,49 @@ function trash() {
     let deleteThisID = current.dataset.id;
     console.log("We're gonna delete the contact with ID:n " + deleteThisID);
 
-    // Traverse the DOM Nodes for the contact
-    // we're supposed to delete.
-    for (let i = 0; i < 5; i++) {
-        deleteThese[i] = current;
-        current = current.previousSibling;
+    let obj = {ID: deleteTheseID};
+    let jsonPayload = JSON.stringify(obj);
+
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/DeleteContact.php";
+
+    // Create a request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    // What the heck does this do?
+    xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
+
+    try {
+        // anonymous function to the gets called when the request is ready
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                // Read in the response from the API.
+                let jsonObject = JSON.parse(xhr.responseText);
+                console.log(jsonObject);
+                console.log("I think 'delete' worked");
+
+                // Traverse the DOM Nodes for the contact
+                // we're supposed to delete.
+                for (let i = 0; i < 5; i++) {
+                    deleteThese[i] = current;
+                    current = current.previousSibling;
+                }
+
+                for (let i = 0; i < deleteThese.length; i++) {
+                    grid.removeChild(deleteThese[i]);
+                }
+                return;
+            }
+        }
+
+        // can we put this above the "ready state change?"
+        // That would make a lot more sense.
+        xhr.send(jsonPayload);
     }
 
-    for (let i = 0; i < deleteThese.length; i++) {
-        grid.removeChild(deleteThese[i]);
+    catch(theError) {
+        console.error(theError.message);
     }
+ 
 }
