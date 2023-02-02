@@ -202,7 +202,7 @@ function confirmEdit() {
         id: current.dataset.id
     };
 
-    let jsonPayload = JSON.stringify(justTheID);
+    let jsonPayload = JSON.stringify(newContact);
 
     let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/EditContact.php";
 
