@@ -185,6 +185,7 @@ function edit() {
 }
 
 function confirmEdit() {
+    let outerThis = this;
     let current = this.parentNode;
     let replaceThese = [];
 
@@ -227,15 +228,15 @@ function confirmEdit() {
                         grid.replaceChild(newDiv, replaceThese[i]);
                     }
 
-                    console.log(this);
-                    console.log(this.parentNode);
+                    console.log(outerThis);
+                    console.log(outerThis.parentNode);
 
                     let editButton = document.createElement("img");
                     editButton.setAttribute("src", "images/edit.png");
                     editButton.addEventListener("click", edit);
-                    this.parentNode.lastChild.classList.toggle("invisible");
-                    this.parentNode.firstChild.addEventListener("click", edit);
-                    this.parentNode.replaceChild(editButton, this);
+                    outerThis.parentNode.lastChild.classList.toggle("invisible");
+                    outerThis.parentNode.firstChild.addEventListener("click", edit);
+                    outerThis.parentNode.replaceChild(editButton, outerThis);
                 }
 
                 else {                   
