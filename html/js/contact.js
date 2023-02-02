@@ -167,7 +167,6 @@ function edit() {
         current = current.previousSibling;
         originalStrings[i] = current.innerHTML;
         replaceThese[i] = current;
-        current = next;
     }
 
     for (let i = 0; i < 4; i++) {
