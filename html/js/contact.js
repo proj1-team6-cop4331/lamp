@@ -172,7 +172,7 @@ function edit() {
     for (let i = 0; i < 4; i++) {
         let textField = document.createElement("input");
         textField.setAttribute("type", "text");
-        textField.innerHTML = current.innerHTML;
+        textField.innerHTML = replaceThese[i].innerHTML;
         grid.replaceChild(textField, replaceThese[i]);
     }
 
@@ -180,7 +180,7 @@ function edit() {
     confirmButton.setAttribute("src", "images/check_button.png");
     confirmButton.setAttribute("width", "50px");
     confirmButton.addEventListener("click", confirmEdit);
-    current.replaceChild(confirmButton, this.parentNode);
+    current.replaceChild(confirmButton, this);
 
 }
 
