@@ -167,14 +167,14 @@ function edit() {
         let textField = document.createElement("input");
         textField.setAttribute("type", "text");
         textField.innerHTML = current.innerHTML;
-        grid.replaceChild(current, textField);
+        grid.replaceChild(textField, current);
     }
 
     let confirmButton = document.createElement("img");
     confirmButton.setAttribute("src", "images/check_button.png");
     confirmButton.setAttribute("width", "50px");
     confirmButton.addEventListener("click", confirmEdit);
-    current.replaceChild(this.parentNode,  confirmButton);
+    current.replaceChild(confirmButton, this.parentNode);
 
 }
 
@@ -187,7 +187,7 @@ function confirmEdit() {
         current = current.previousSibling;
         let newDiv = document.createElement("div");
         textField.innerHTML = current.innerHTML;
-        grid.replaceChild(newDiv);
+        grid.replaceChild(newDiv, current);
     }
 }
 
