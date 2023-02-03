@@ -354,9 +354,9 @@ function doSearch() {
 
                 // Add back the stuff that the search query found.
 
-                for (let i = 0; i < arr.length; i++) {
+                /* for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
-                }
+                } */
             }
         }
 
