@@ -1,7 +1,5 @@
 
 function onLogin() {
-    let userID = window.localStorage.getItem("id");
-    // Get all of the contacts for this user.
 
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
@@ -95,6 +93,7 @@ function accept() {
                 // The API couldn't register this new user. (Perhaps that user already exists.)
                 if (err == "") {
                     console.log("contact added successfully");
+                    toggleCreation();
                     appendContactList(contact);
                 }
 
@@ -149,8 +148,6 @@ function appendContactList(contact) {
     }
 
     grid.appendChild(options);
-
-    toggleCreation();
 }
 
 function edit() {
