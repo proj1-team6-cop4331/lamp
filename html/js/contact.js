@@ -348,7 +348,8 @@ function doSearch() {
                 // Delete everything else.
 
                 let grid = document.getElementById("grid");
-                for (let i = 5; i < grid.children.length; i++) {
+                console.log(grid.children[i]);
+                for (let i = 10; i < grid.children.length;) {
                     grid.removeChild(grid.children[i]);
                 }
 
