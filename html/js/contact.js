@@ -193,14 +193,18 @@ function confirmEdit() {
         current = current.previousSibling;
         replaceThese[i] = current;
     }
-
+    
     let newContact = {
         id: current.dataset.id,
         firstName:  replaceThese[0].value,
         lastName: replaceThese[1].value,
         phone: replaceThese[2].value,
-        mail: replaceThese[3].value,
+        mail: replaceThese[3].value
     };
+
+    // all of this appears to work, but it doesn't. We're not giving
+    // EditContact.php the right data.
+    console.log(newContact);
 
     let jsonPayload = JSON.stringify(newContact);
 
@@ -259,9 +263,6 @@ function confirmEdit() {
     catch(theError) {
         console.error(theError.message);
     }
-
-    
-    
 }
 
 function trash() {
