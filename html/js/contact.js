@@ -195,7 +195,7 @@ function confirmEdit() {
     }
     
     let newContact = {
-        id: current.dataset.id,
+        id: this.parentNode.dataset.id,
         firstName:  replaceThese[0].value,
         lastName: replaceThese[1].value,
         phone: replaceThese[2].value,
