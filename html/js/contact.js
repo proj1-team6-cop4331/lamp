@@ -348,15 +348,15 @@ function doSearch() {
                 // Delete everything else.
 
                 let grid = document.getElementById("grid");
-                for (let i = 10; i < grid.children.length; i++) {
+                for (let i = 5; i < grid.children.length; i++) {
                     grid.removeChild(grid.children[i]);
                 }
 
                 // Add back the stuff that the search query found.
 
-                /* for (let i = 0; i < arr.length; i++) {
+                for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
-                } */
+                }
             }
         }
 
