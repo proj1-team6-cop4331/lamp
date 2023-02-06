@@ -170,7 +170,10 @@ h1, label, #loginButton {
     font-size: 24px;
     width: 9em;
     height: 1.8em;
-    background-color: #B4B8DB;
+}
+
+#regButton:hover {
+    background-color: #B4B8D8;
 }
 
 button:active {
