@@ -12,11 +12,6 @@ function doLogout() {
     window.location.href = "index.html";
 }
 
-window.addEventListener('beforeunload', function () {
-    window.localStorage.clear();
-    window.location.href = "index.html";
-});
-
 function addPlaceholder() {
     let grid = document.getElementById("grid");
 

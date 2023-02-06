@@ -143,6 +143,7 @@ function appendContactList(contact) {
         if (ind <= 4) {
             let newDiv = document.createElement("div");
             newDiv.innerHTML = contact[field];
+            newDiv.classList.add("contact-info");
             grid.appendChild(newDiv);
         } ind++;
     }
@@ -233,6 +234,7 @@ function confirmEdit() {
                     for (let i = 0; i < 4; i++) {
                         let newDiv = document.createElement("div");
                         newDiv.innerHTML = replaceThese[i].value;
+                        newDiv.classList.add("contact-info");
                         grid.replaceChild(newDiv, replaceThese[i]);
                     }
 
@@ -263,6 +265,9 @@ function confirmEdit() {
 }
 
 function trash() {
+    if (!confirm("Are you sure you want to delete this contact? (They will be lost forever!)"))
+        return;
+
     let current = this.parentNode;
     let deleteThisID = current.dataset.id;
     console.log("We're gonna delete the contact with ID:n " + deleteThisID);
