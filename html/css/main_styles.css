@@ -1,7 +1,15 @@
 body {
     height: 100vh;
     margin: 0px 0px 0px 0px;
-    background-color: #7795C7;
+    background-color: #B4B8DB;
+}
+
+#right {
+    background-image: url("../images/friends.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 2px black solid;
+    
 }
 
 h1, label, #loginButton {
@@ -13,7 +21,6 @@ h1, label, #loginButton {
     font-size: 3.0em;
     font-family: 'anybody', cursive;
     color: black;
-    margin-top: 60px;
 }
 
 #head-bar {
@@ -21,6 +28,7 @@ h1, label, #loginButton {
     height: auto;
     display: inline-block;
     top: 0px;
+
     
 }
 
@@ -86,28 +94,30 @@ h1, label, #loginButton {
 #signIn {
     height: max-content;
     float: right;
+    left: 1vw;
     background-color: lightgrey;
-    border: #9b9b9b groove;
+    border: black groove;
 }
 
 #main {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 6vw;
+    column-gap: 3vw;
+    margin: 3vw 3vw;
 }
 
 #retUser {
     margin-left: 15px;
+    margin-top: 1vw;
 }
 
 .info {
     display: flex;
     flex-direction: column;
-    width: 69.1%;
-    margin-left: 11.1%;
-    margin-bottom: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 3vw;
     background-color: lightgrey;
-    border: 7px #898989  ridge;
+    border: black groove;
 }
 
 #about {
@@ -119,12 +129,13 @@ h1, label, #loginButton {
 
 #regNow {
     font-size: 1.5em;
-    margin-left: 50px;
     font-family: 'Montserrat';
+    margin-left: 3vw;
+    margin-top: 1vw;
 }
 
 #register-form {
-    margin-left: 100px;
+    margin-left: 3vw;
 }
 
 #register-form > input{
@@ -156,12 +167,10 @@ h1, label, #loginButton {
 #regButton {
     border-radius: 5px;
     margin-top: 5px;
+    font-size: 24px;
     width: 9em;
     height: 1.8em;
-}
-
-#regButton:hover {
-    background-color: #b5b5b5;
+    background-color: #B4B8DB;
 }
 
 button:active {
@@ -189,7 +198,7 @@ h1 {
     background-color: #B4B8DB;
     font-weight: 500;
     font-size: 24px;
-    width: 50%;
+    width: 25%;
     margin-bottom: 15px;
 }
 
