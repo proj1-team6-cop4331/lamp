@@ -2,6 +2,7 @@
 
 // Decode the Json info
 $inData = getRequestInfo();
+$load = $inData["load"] * 10;
 
 // Declare variables that will be returned
 $searchResults = "";
@@ -16,9 +17,9 @@ if ($conn->connect_error) {
 } else {
     // Query that selects all contacts that have similar spelling from what's being searched
     // Takes into account both first and last name
-    $stmt = $conn->prepare("SELECT * from Contacts WHERE (firstName LIKE ? OR lastName LIKE ? )AND userID=?");
+    $stmt = $conn->prepare("SELECT * from Contacts WHERE (firstName LIKE ? OR lastName LIKE ? )AND userID=? LIMIT ?, 10");
     $subName = "%" . $inData["search"] . "%";
-    $stmt->bind_param("sss", $subName, $subName, $inData["userId"]);
+    $stmt->bind_param("sssi", $subName, $subName, $inData["userId"], $load);
     $stmt->execute();
     $result = $stmt->get_result();
 
