@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Super Contacts</title>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <style>
+            #heading {
+                display: block;
+                margin: auto;
+                padding-bottom: 5vw;
+            }
+            #main {
+                display: flex;
+            }
+
+            #left {
+                width: 60%;
+            }
+            #right {
+                width: 40%;
+            }
+            body {
+                background-color: black;
+            }
+            h3, h4 {
+                color: white;
+                font-size: 3vw;
+                font-family: 'Press Start 2P', cursive;
+                display: inline-block;
+                margin: 1vw;
+            }
+
+            h3 {
+                display: block;
+                text-align: center;
+            }
+
+            .hidden {
+                visibility: hidden;
+            }
+
+            #selectLogin, #selectRegister {
+                position: relative;
+                left: 12vw;
+                margin: 2vw;
+                width: 60%;
+            }
+
+            #selectLogin:hover, #selectRegister:hover {
+                border: 2px yellow solid;
+            }
+
+            #marioImg {
+                width: 25vw;
+                margin: auto;
+            }
+
+            .mushroom {
+                width: 5vw;
+            }
+        </style>
+    </head>
+    <body>
+        <img id = "heading" src = "images/lazyTitle.png">
+        <div id = "main">
+            <div id = "left">
+                <h3>Play Select</h3>
+                <div id = "selectLogin">
+                    <img class = "mushroom hidden" src = "images/mushroom.png">
+                    <h4>Login</h4>
+                </div>
+                <div id = "selectRegister">
+                    <img class = "mushroom hidden" src = "images/mushroom.png">
+                    <h4>Register</h4>
+                </div>
+            </div>
+            <div id = "right">
+                <img id = "marioImg" src = "images/lazyMario.png">
+            </div>
+        </div>
+    </body>
+    <footer>
+        <script>
+            let selectLogin = document.getElementById("selectLogin");
+            console.log(selectLogin.children);
+            let selectRegister = document.getElementById("selectRegister");
+            selectLogin.addEventListener("mouseover", function() {
+                selectLogin.children[0].classList.remove("hidden");
+            });
+            selectLogin.addEventListener("mouseout", function() {
+                selectLogin.children[0].classList.add("hidden");
+            });
+            selectRegister.addEventListener("mouseover", function() {
+                selectRegister.children[0].classList.remove("hidden");
+            });
+            selectRegister.addEventListener("mouseout", function() {
+                selectRegister.children[0].classList.add("hidden");
+            });
+        </script>
+    </footer>
+</html>

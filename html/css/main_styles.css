@@ -8,7 +8,7 @@ body {
     background-image: url("../images/friends.jpg");
     background-size: cover;
     background-position: center;
-    border: 2px black solid;
+    box-shadow: 4px 6px rgb(110, 110, 110);
     
 }
 
@@ -96,7 +96,8 @@ h1, label, #loginButton {
     float: right;
     left: 1vw;
     background-color: lightgrey;
-    border: black groove;
+    box-shadow: 3px 6px rgb(110, 110, 110);
+    
 }
 
 #main {
@@ -117,7 +118,9 @@ h1, label, #loginButton {
     flex-direction: column;
     padding-bottom: 3vw;
     background-color: lightgrey;
-    border: black groove;
+    /*border: black groove;*/
+    box-shadow: 4px 6px rgb(110, 110, 110);
+    border-bottom-right-radius: 20px;
 }
 
 #about {
