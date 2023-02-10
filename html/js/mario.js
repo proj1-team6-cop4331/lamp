@@ -18,11 +18,11 @@ selectRegister.addEventListener("mouseout", function () {
     selectRegister.children[0].classList.add("hidden");
 });
 
-selectLogin.addEventListener("onclick", function () {
+selectLogin.addEventListener("click", function () {
     console.log("Login clicked.");
     window.location.href = "login.html";
 });
-selectRegister.addEventListener("onclick", function () {
+selectRegister.addEventListener("click", function () {
     console.log("Register clicked.");
     window.location.href = "register.html";
 });

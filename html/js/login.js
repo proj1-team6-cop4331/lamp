@@ -1,4 +1,5 @@
 let loginButton = document.querySelector("#loginButton");
+let backButton = document.querySelector("#back");
 let firstname = '';
 
 loginButton.addEventListener("click", function () {
@@ -61,4 +62,8 @@ loginButton.addEventListener("click", function () {
         console.error(theError.message);
     }
     
+});
+
+backButton.addEventListener("click", function () {
+    window.location.href = "mario.html";
 });
