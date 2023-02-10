@@ -45,3 +45,11 @@ h3, h4 {
     display: inline-block;
     margin: 1vw;
 }
+
+#loginButton {
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 24px;
+    width: 25%;
+    margin-bottom: 15px;
+}
