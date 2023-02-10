@@ -29,29 +29,6 @@
         </div>
     </body>
     <footer>
-        <script>
-            let selectLogin = document.getElementById("selectLogin");
-            console.log(selectLogin.children);
-            let selectRegister = document.getElementById("selectRegister");
-            selectLogin.addEventListener("mouseover", function() {
-                selectLogin.children[0].classList.remove("hidden");
-            });
-            selectLogin.addEventListener("mouseout", function() {
-                selectLogin.children[0].classList.add("hidden");
-            });
-            selectRegister.addEventListener("mouseover", function() {
-                selectRegister.children[0].classList.remove("hidden");
-            });
-            selectRegister.addEventListener("mouseout", function() {
-                selectRegister.children[0].classList.add("hidden");
-            });
-
-            selectLogin.addEventListener("onclick", function () {
-                window.location.href = "login.html";
-            });
-            selectRegister.addEventListener("onclick", function () {
-                window.location.href = "register.html";
-            });
-        </script>
+        <script type="text/javascript" src="js/mario.js"></script>
     </footer>
 </html>
