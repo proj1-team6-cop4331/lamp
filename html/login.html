@@ -19,8 +19,10 @@
         <h3>Back</h3>
     </div>
     <div class="container">
-        <img src="images/lazyTitle.png" alt="SuperContacts" class="center">
+        <img id = "heading" src="images/lazyTitle.png" alt="SuperContacts" class="center">
         <div class="form-container">
+            <!-- The corners of the brick. -->
+            <div id = "black1"></div><div id = "black2"></div><div id = "black3"></div><div id = "black4"></div>
             <section>
                 <h1>Login</h1>
                 <label id="userLabel">Username: </label>
@@ -38,6 +40,10 @@
     </div>
 </body>
 <footer>
+    <script>
+        let par = document.getElementById("black1");
+        console.log(par.parentElement);
+    </script>
     <!-- javascript -->
     <script type="text/javascript" src="js/login.js"></script>
 </footer>
