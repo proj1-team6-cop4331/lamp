@@ -1,5 +1,8 @@
+//Gathering references
 let loginButton = document.querySelector("#loginButton");
 let backButton = document.querySelector("#back");
+let togglePassword = document.querySelector("#togglePassword");
+let passwordBar = document.querySelector("#enterPassword");
 let firstname = '';
 
 loginButton.addEventListener("click", function () {
@@ -66,4 +69,10 @@ loginButton.addEventListener("click", function () {
 
 backButton.addEventListener("click", function () {
     window.location.href = "mario.html";
+});
+
+togglePassword.addEventListener("click", function () {
+    const type = passwordBar.getAttribute("type") === "password" ? "text" : "password";
+    passwordBar.setAttribute("type", type);
+    this.classList.toggle("bi-eye");
 });
