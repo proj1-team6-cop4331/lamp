@@ -11,25 +11,21 @@
     <body>
         <img id = "heading" src = "images/lazyTitle.png">
         <div id = "main">
-            <div id = "left">
+            <div id="left">
                 <h3>Play Select</h3>
-                <div id = "selectLogin">
-                    <a href="login.html">
-                        <img class="mushroom hidden" src="images/mushroom.png">
-                        <h4>Login</h4>
-                    </a>
+                <div id="selectLogin">
+                    <img class="mushroom hidden" src="images/mushroom.png">
+                    <h4>Login</h4>
                 </div>
-                <div id = "selectRegister">
-                    <a href="register.html">
-                        <img class="mushroom hidden" src="images/mushroom.png">
-                        <h4>Register</h4>
-                    </a>
+                <div id="selectRegister">
+                    <img class="mushroom hidden" src="images/mushroom.png">
+                    <h4>Register</h4>
                 </div>
+                <img id="pipe" src="images/pipe.png" />
             </div>
             <div id = "right">
                 <img id = "marioImg" src = "images/lazyMario.png">
             </div>
-            <img id="pipe" src="images/pipe.png" />
         </div>
     </body>
     <footer>
@@ -48,6 +44,13 @@
             });
             selectRegister.addEventListener("mouseout", function() {
                 selectRegister.children[0].classList.add("hidden");
+            });
+
+            selectLogin.addEventListener("onclick", function () {
+                window.location.href = "login.html";
+            });
+            selectRegister.addEventListener("onclick", function () {
+                window.location.href = "register.html";
             });
         </script>
     </footer>

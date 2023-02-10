@@ -58,11 +58,11 @@ h3 {
 }
 
 #pipe {
-    width: 57vw;
+    width: 21vw;
     position: absolute;
     left: 0px;
     top: 68%;
-    offset-rotate: 90deg;
+    rotate: 90deg;
 }
 
 .mushroom {
