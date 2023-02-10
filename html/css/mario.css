@@ -1,0 +1,69 @@
+#heading {
+    display: block;
+    margin: auto;
+    padding-bottom: 5vw;
+    width: 85%;
+    height: 12%;
+}
+
+#main {
+    display: flex;
+}
+
+#left {
+    width: 50%;
+    margin-left: 23%;
+}
+
+#right {
+    width: 50%;
+}
+
+body {
+    background-color: black;
+}
+
+h3, h4 {
+    color: white;
+    font-size: 2.5vw;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    margin: 1vw;
+}
+
+h3 {
+    display: block;
+    text-align: center;
+    font-size: 2.7vw;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#selectLogin, #selectRegister {
+    position: relative;
+    left: 5vw;
+    margin: 2vw;
+    width: 75%;
+}
+
+    #selectLogin:hover, #selectRegister:hover {
+        border: 2px yellow solid;
+    }
+
+#marioImg {
+    width: 28vw;
+    margin: auto;
+}
+
+#pipe {
+    width: 67%;
+    position: absolute;
+    left: 0px;
+    top: 68%;
+}
+
+.mushroom {
+    width: 5vw;
+}
