@@ -58,7 +58,10 @@ h3 {
 }
 
 #pipe {
-    width: 10vw;
+    width: 63vw;
+    position: absolute;
+    left: 0px;
+    top: 78%;
 }
 
 .mushroom {
