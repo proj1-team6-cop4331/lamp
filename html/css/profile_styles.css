@@ -2,11 +2,29 @@ input {
     min-width: 50px;
 }
 
+h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
 #user {
     text-align: right;
     color: white;
     text-shadow: 1px 1px 2px black;
     margin-right: 30px;
+}
+
+#bricks {
+    background: url("../images/stone.png") repeat ;
+    height: 48px;
+}
+
+#star {
+    width: 50px;
+}
+
+#numLives {
+    display: inline-block;
 }
 
 #logout {

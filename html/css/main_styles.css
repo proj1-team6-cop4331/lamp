@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     margin: 0px 0px 0px 0px;
-    background-color: #B4B8DB;
+    background-color: black;
 }
 
 #right {
@@ -28,12 +28,12 @@ h1, label, #loginButton {
     height: auto;
     display: inline-block;
     top: 0px;
-
-    
+    display: flex;
+    justify-content: space-between;
 }
 
-#head-bar, nav {
-    background: url("https://lamp-cop4331.skyclo.dev/images/black-marble-natural-pattern-background-abstract-black-white.jpg") repeat;
+#head-bar > * {
+    padding: 10px 30px;
 }
 
 .nav-link {
