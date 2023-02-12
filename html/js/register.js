@@ -1,5 +1,6 @@
 let registerButton = document.querySelector("#regButton");
 let backButton = document.querySelector("#back");
+let passwordBar = document.querySelector("#regPassword");
 
 registerButton.addEventListener("click", function() {
     let firstName = document.querySelector("#regFirstName").value;
