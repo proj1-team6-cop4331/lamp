@@ -147,13 +147,17 @@ input#searchBar {
 }
 
 #leftArrow {
-    width: 2vw;
+    width: 8vw;
+    height: 6vw;
     transform: rotate(-90deg);
+    cursor: pointer;
     
 }
 #rightArrow {
-    width: 2vw;
+    width: 8vw;
+    height: 6vw;
     transform: rotate(90deg);
+    cursor: pointer;
     
 }
 
