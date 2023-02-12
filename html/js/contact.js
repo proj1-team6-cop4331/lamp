@@ -364,7 +364,7 @@ function cancelEdit() {
     this.parentNode.replaceChild(editIcon, this.previousSibling);
 
     trashIcon = document.createElement("img");
-    trashIcon.setAttribute("src", "images/edit.png");
+    trashIcon.setAttribute("src", "images/delete.png");
     trashIcon.addEventListener("click", trash);
     this.parentNode.replaceChild(trashIcon, this);
 }
