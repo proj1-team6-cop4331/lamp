@@ -18,7 +18,7 @@ if ($conn->connect_error) {
     $id = $inData["userId"];
 
     $result = mysqli_query($conn, "SELECT * FROM Contacts WHERE userID=$id");
-    $rowcount = mysqli_num_rows($result);
+    $rowcount = $result->num_rows;
 
     // Get the count as json
     $searchResults = '"Count" : "' . $rowcount . '"';
