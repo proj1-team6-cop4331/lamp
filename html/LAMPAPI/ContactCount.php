@@ -12,8 +12,8 @@ if ($conn->connect_error) {
     $stmt = $conn->prepare("SELECT * FROM Contacts WHERE userID=?");
     $stmt->bind_param("i", $inData["userId"]);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $count = $result->num_rows;
+    //$result = $stmt->get_result();
+    $count = $stmt->num_rows;
 
 
     // Get the count as json
