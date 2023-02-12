@@ -9,13 +9,14 @@ if ($conn->connect_error) {
 } else {
     // Query that selects all contacts that have similar spelling from what's being searched
     // Takes into account both first and last name
-    $stmt = $conn->prepare("SELECT COUNT(*) as total FROM Contacts WHERE userID=?");
+    //$stmt = $conn->prepare("SELECT COUNT(*) as total FROM Contacts WHERE userID=?");
+    $stmt = $conn->prepare("SELECT * FROM Contacts WHERE userID=?");
     $stmt->bind_param("i", $inData["userId"]);
     $stmt->execute();
-    $result = $stmt->get_result()->fetch_assoc();
+    $result = $stmt->num_rows();
 
     // Get the count as json
-    $searchResults = '"Count" : "' . $result['total'] . '"';
+    $searchResults = '"Count" : "' . $result . '"';
 
     returnWithInfo($searchResults);
 
