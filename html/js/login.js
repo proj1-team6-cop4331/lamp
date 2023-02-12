@@ -51,6 +51,7 @@ loginButton.addEventListener("click", function () {
                     let fn = jsonObject.firstName;
                     let ln = jsonObject.lastName;
                     window.localStorage.setItem("first", fn);
+                    window.localStorage.setItem("user", username);
                     window.localStorage.setItem("id", userId);
                     window.location.href = "profile.html";
                 }

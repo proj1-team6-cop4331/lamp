@@ -100,8 +100,8 @@ input#searchBar {
     width: 75%;
     margin: auto;
     padding-bottom: 100px;
-    background-color: lightgrey;
-    border: 7px #898989 ridge;
+    background-color: #dfaa02;
+    border: 5px #a36f13 solid;
 }
 
 #grid {
@@ -112,6 +112,8 @@ input#searchBar {
 
 #grid > * {
     margin: 10px 10px 0px 10px;
+    color: white;
+    text-shadow: 1px 1px 0px black;
 }
 
 #grid > .contact-info {

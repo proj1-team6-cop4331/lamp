@@ -4,7 +4,8 @@ function fillUser() {
         window.location.href = "index.html";
         return;
     }
-    document.getElementById('user').innerHTML = "Welcome back, " + window.localStorage.getItem("first") + "!";
+    document.getElementById('name').innerHTML = "Welcome back, " + window.localStorage.getItem("first") + "!";
+    document.getElementById('user').innerHTML = window.localStorage.getItem("user");
 }
 
 function doLogout() {
