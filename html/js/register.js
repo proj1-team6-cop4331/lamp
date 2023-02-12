@@ -7,7 +7,8 @@ registerButton.addEventListener("click", function() {
     let password = document.querySelector("#regPassword").value;
 
     if (password.length < 8) {
-        document.getElementById("invalidPass").style.display = "block";
+        document.getElementById("invalidText").style.display = "block";
+        document.getElementById("invalidText").innerHTML = "Your password must be at least 8 characters long!";
         return;
     }
 
@@ -41,7 +42,8 @@ registerButton.addEventListener("click", function() {
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
                 if (userId < 1) {
-                    console.log("Registration Failed");
+                    document.getElementById("invalidText").style.display = "block";
+                    document.getElementById("invalidText").innerHTML = "Username or password is taken!"
 					return;
                 }
 
@@ -62,4 +64,22 @@ registerButton.addEventListener("click", function() {
         console.error(theError.message);
     }
 
+});
+
+backButton.addEventListener("click", function () {
+    window.location.href = "mario.html";
+});
+
+togglePassword.addEventListener("click", function () {
+    const type = passwordBar.getAttribute("type") === "password" ? "text" : "password";
+    passwordBar.setAttribute("type", type);
+    this.classList.toggle("bi-eye");
+});
+
+document.body.addEventListener("load", function () {
+    if (document.getElementById("invalidText").style.display == "block") {
+
+        document.getElementById("invalidText").style.display = "none";
+
+    }
 });

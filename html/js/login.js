@@ -42,7 +42,8 @@ loginButton.addEventListener("click", function () {
                 // The API couldn't find a user.
                 if (userId < 1) {
                     console.log("User/Password combination incorrect");
-                    document.getElementById("invalidLabel").style.display = "block";
+                    document.getElementById("loginFailed").style.display = "block";
+                    document.getElementById("enterPassword").style.marginBottom = "2vw";
 					return;
                 }
 
@@ -75,4 +76,13 @@ togglePassword.addEventListener("click", function () {
     const type = passwordBar.getAttribute("type") === "password" ? "text" : "password";
     passwordBar.setAttribute("type", type);
     this.classList.toggle("bi-eye");
+});
+
+document.body.addEventListener("load", function () {
+    if (document.getElementById("loginFailed").style.display == "block") {
+
+        document.getElementById("enterPassword").style.marginBottom = "10%";
+        document.getElementById("loginFailed").style.display = "none";
+
+    }
 });

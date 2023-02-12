@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/register.css">
+    <title>Super Contacts</title>
+
+</head>
+<body>
+    <img id="heading" src="images/lazyTitle.png" alt="SuperContacts" class="center">
+    <div id="back">
+        <img id="backArrow" src="images/back_arrow.png" />
+        <h3>Back</h3>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <!-- The corners of the brick. -->
+            <div id="black1"></div><div id="black2"></div><div id="black3"></div><div id="black4"></div>
+            <section>
+                <h1>Register</h1>
+                <form id="regForm">
+                    <div class="flex-form">
+                        <label id="firstLabel">First Name: </label>
+                        <input id="regFirstName" type="text" name="firstName" placeholder="First Name">
+                    </div>
+                    <div class="flex-form">
+                        <label id="lastLabel">Last Name: </label>
+                        <input id="regLastName" type="text" name="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="flex-form">
+                        <label id="userLabel">Username: </label>
+                        <input id="regUsername" type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="flex-form">
+                        <label id="passLabel">Password: </label>
+                        <input id="regPassword" type="password" name="password" placeholder="Password">
+                        <i class="bi bi-eye-slash" id="togglePassword"></i>
+                    </div>
+                    <div class="flex-form">
+                        <h5 id="invalidText">Your password must be at least 8 characters long!</h5>
+                    </div>
+                    <div class="flex-form">
+                        <button id="regButton" type="button" role="button">Wahoo!</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+<footer>
+    <script>
+        let par = document.getElementById("black1");
+        console.log(par.parentElement);
+    </script>
+    <!-- javascript -->
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+</footer>
+</html>

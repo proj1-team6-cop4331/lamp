@@ -8,6 +8,13 @@
     aspect-ratio: 10/6;
 }
 
+.flex-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     margin: 0 auto;
     font-family: Arial;
@@ -42,9 +49,9 @@ input {
     left: 2vw;
 }
 
-#back:hover {
-    cursor:pointer;
-}
+    #back:hover {
+        cursor: pointer;
+    }
 
 #backArrow {
     margin-bottom: 2vh;
@@ -79,23 +86,24 @@ h1 {
     padding-top: 3vw;
 }
 
-#loginForm {
-    margin-top: 7vh;
+#regForm {
+    margin-top: 4vh;
 }
 
-#loginForm > label {
-    font-family: "VT323" , fantasy;
-    font-size: 2.5em;
-    text-shadow: 1px 1px 2px black;
-}
+    .flex-form > label {
+        font-family: "VT323", fantasy;
+        font-size: 2.5em;
+        margin-right: 20px;
+        text-shadow: 1px 1px 2px black;
+    }
 
-#loginForm > * {
-    margin-bottom: 10%;
-}
+    .flex-form > * {
+        margin-bottom: 5%;
+    }
 
-#loginForm > input {
-    background-color: #cbcbcb;
-}
+    .flex-form > input {
+        background-color: #cbcbcb;
+    }
 
 input::placeholder {
     color: black;
@@ -109,16 +117,16 @@ form i {
     cursor: pointer;
 }
 
-#loginButton:hover {
+#regButton:hover {
     cursor: pointer;
 }
 
-#loginButton:active {
+#regButton:active {
     color: gray;
     padding: 6px 4px 4px 4px;
 }
 
-#loginButton {
+#regButton {
     font-weight: 500;
     font-size: 2.5em;
     width: 30%;
@@ -130,7 +138,7 @@ form i {
     font-family: "VT323", fantasy;
 }
 
-#loginFailed {
+#invalidText {
     margin-top: 0px;
     font-size: 1.6em;
     font-family: 'VT323';
@@ -234,4 +242,3 @@ form i {
         bottom: 20px;
     }
 }
-
