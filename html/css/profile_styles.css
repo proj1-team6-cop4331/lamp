@@ -113,18 +113,20 @@ input#searchBar {
 #grid > * {
     margin: 10px 10px 0px 10px;
     color: white;
-    text-shadow: 1px 1px 0px black;
 }
 
 #grid > .contact-info {
     font-size: 1.1em;
-    font-weight: 500;
+    font-family: sans-serif;
+    font-weight: 600;
 }
 
 #grid > .header {
     font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px 0px black;
     border-bottom-style: solid;
-    border-bottom-color: gray;
+    border-bottom-color: black;
 }
 
 .checkOrX, .editAndDelete{
