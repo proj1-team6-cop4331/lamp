@@ -70,7 +70,7 @@ registerButton.addEventListener("click", function() {
 });
 
 backButton.addEventListener("click", function () {
-    window.location.href = "mario.html";
+    window.location.href = "index.html";
 });
 
 togglePassword.addEventListener("click", function () {
