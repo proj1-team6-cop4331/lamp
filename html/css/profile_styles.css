@@ -126,6 +126,7 @@ input#searchBar {
 #grid > .header {
     font-size: 20px;
     font-weight: 600;
+    color: white;
     text-shadow: 1px 1px 0px black;
     border-bottom-style: solid;
     border-bottom-color: black;
