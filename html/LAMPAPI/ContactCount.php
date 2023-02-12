@@ -13,9 +13,9 @@ if ($conn->connect_error) {
     /*$stmt = $conn->prepare("SELECT * FROM Contacts WHERE userID=?");
     $stmt->bind_param("i", $inData["userId"]);
     $stmt->execute();
-    $result = $stmt->num_rows;
+    $result = $stmt->num_rows;*/
 
-    $id = $inData["userId"]; */
+    $id = $inData["userId"];
 
     $result = $conn->query("SELECT * FROM Contacts WHERE userID=$id");
 
