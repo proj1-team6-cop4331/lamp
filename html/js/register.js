@@ -42,6 +42,8 @@ registerButton.addEventListener("click", function() {
                 let jsonObject = JSON.parse(xhr.responseText);
                 userId = jsonObject.id;
 
+                console.log(jsonObject);
+
                 // The API couldn't register this new user. (Perhaps that user already exists.)
                 if (userId < 1) {
                     document.getElementById("invalidText").style.display = "block";
