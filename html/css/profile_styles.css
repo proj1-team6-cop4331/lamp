@@ -139,6 +139,20 @@ input#searchBar {
     border-bottom-color: black;
 }
 
+#menuFooter {
+    display: flex;
+    justify-content: space-around;
+}
+
+#leftArrow {
+    transform: rotate(-90deg);
+    width: 1vw;
+}
+#rightArrow {
+    transform: rotate(90deg);
+    width: 1vw;
+}
+
 .checkOrX, .editAndDelete{
     display: flex;
     justify-content: space-around;
