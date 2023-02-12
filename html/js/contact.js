@@ -71,6 +71,7 @@ function loadPage(searchQuery, page) {
 
                 // When we get a response from API, we'll get an id back.
                 let jsonObject = JSON.parse(xhr.responseText);
+                console.log(jsonObject);
                 let arr = jsonObject.results;
 
                 for (let i = 0; i < arr.length; i++) {
