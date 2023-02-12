@@ -342,7 +342,7 @@ function confirmEdit() {
     }
 }
 
-cancelEdit(origStrings) {
+function cancelEdit(origStrings) {
     for(let i = 0; i < 4; i++) {
         let newDiv = document.createElement("div");
         newDiv.innerHTML = origStrings[i];
