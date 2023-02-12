@@ -371,7 +371,6 @@ function doSearch() {
                 // Add back the stuff that the search query found.
 
                 for (let i = 0; i < arr.length; i++) {
-                    numContacts++;
                     appendContactList(arr[i]);
                 }
             }
