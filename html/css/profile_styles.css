@@ -109,7 +109,7 @@ input#searchBar {
     width: 75%;
     margin: auto;
     margin-bottom: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     background-color: #dfaa02;
     border: 5px #a36f13 solid;
 }
@@ -144,18 +144,20 @@ input#searchBar {
 #menuFooter {
     display: flex;
     justify-content: space-around;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 #leftArrow {
-    width: 8vw;
-    height: 6vw;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(-90deg);
     cursor: pointer;
     
 }
 #rightArrow {
-    width: 8vw;
-    height: 6vw;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(90deg);
     cursor: pointer;
     
@@ -163,6 +165,9 @@ input#searchBar {
 
 h5 {
     font-size: 18px;
+    margin: 0;
+    align-items: flex-end;
+    text-shadow: 0px 0px 2px white;
 }
 
 .checkOrX, .editAndDelete{
