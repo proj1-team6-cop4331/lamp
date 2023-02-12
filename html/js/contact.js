@@ -361,8 +361,8 @@ function doSearch() {
                 var jsonObject = JSON.parse(xhr.responseText);
                 let arr = jsonObject.results;
 
-                // Delete everything else.
-
+                numContacts = 0;
+                // Delete everything else.  
                 let grid = document.getElementById("grid");
                 for (let i = 10; i < grid.children.length;) {
                     grid.removeChild(grid.children[i]);
@@ -371,6 +371,7 @@ function doSearch() {
                 // Add back the stuff that the search query found.
 
                 for (let i = 0; i < arr.length; i++) {
+                    numContacts++;
                     appendContactList(arr[i]);
                 }
             }
