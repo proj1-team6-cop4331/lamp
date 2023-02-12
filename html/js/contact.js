@@ -74,6 +74,13 @@ function loadPage(searchQuery, page) {
                 console.log(jsonObject);
                 let arr = jsonObject.results;
 
+                numContacts = 0;
+                // Delete everything else.  
+                let grid = document.getElementById("grid");
+                for (let i = 10; i < grid.children.length;) {
+                    grid.removeChild(grid.children[i]);
+                }
+
                 for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
                 }
@@ -94,11 +101,17 @@ function prevPage() {
     pageNum--;
     if (pageNum < 1) pageNum = 1;
     loadPage("", pageNum);
+
+    let pageNumLabel = document.getElementById("pageNumLabel");
+    pageNumLabel.innerHTML = pageNum;
 }
 
 function nextPage() {
     pageNum++;
     loadPage("", pageNum);
+
+    let pageNumLabel = document.getElementById("pageNumLabel");
+    pageNumLabel.innerHTML = pageNum;
 }
 // Show a template for the user to type in a contact
 function toggleCreation() {
