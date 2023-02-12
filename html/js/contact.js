@@ -1,5 +1,6 @@
 let pageNum = 1;
 let numContacts = 0;
+let originalStrings = [];
 
 function onLogin() {
 
@@ -229,7 +230,6 @@ function edit() {
     let current = this.parentNode;
     let grid = current.parentNode;
 
-    let originalStrings = [];
     let replaceThese = [];
 
     // Traverse the DOM across the row
@@ -257,9 +257,7 @@ function edit() {
     let cancelButton = document.createElement("img");
     cancelButton.setAttribute("src", "images/delete_button.png");
     cancelButton.setAttribute("width", "50px");
-    cancelButton.addEventListener("click", function() {
-        cancelEdit(originalStrings);
-    });
+    cancelButton.addEventListener("click", cancelEdit);
     cancelButton.previousSibling = confirmButton;
     confirmButton.parentNode.replaceChild(cancelButton, confirmButton.parentNode.lastChild);
 }
@@ -343,7 +341,7 @@ function confirmEdit() {
     }
 }
 
-function cancelEdit(origStrings) {
+function cancelEdit() {
 
     let current = this.parentNode;
     let replaceThese = [];
@@ -355,7 +353,7 @@ function cancelEdit(origStrings) {
 
     for(let i = 0; i < 4; i++) {
         let newDiv = document.createElement("div");
-        newDiv.innerHTML = origStrings[i];
+        newDiv.innerHTML = originalStrings[i];
         newDiv.classList.add("contact-info");
         grid.replaceChild(newDiv, replaceThese[i]);
     }
