@@ -1,5 +1,7 @@
 <?php
 
+$inData = getRequestInfo();
+
 // Change for project but connecting to Database
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 
@@ -12,8 +14,8 @@ if ($conn->connect_error) {
     $stmt = $conn->prepare("SELECT * FROM Contacts WHERE userID=?");
     $stmt->bind_param("i", $inData["userId"]);
     $stmt->execute();
-    //$result = $stmt->get_result();
-    $count = $stmt->num_rows;
+    $result = $stmt->get_result();
+    $count = $result->num_rows;
 
 
     // Get the count as json
