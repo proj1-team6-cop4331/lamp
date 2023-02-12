@@ -52,10 +52,10 @@ registerButton.addEventListener("click", function() {
                 }
 
                 else {                   
-                    window.localStorage.setItem("first", firstName);
+                    /*window.localStorage.setItem("first", firstName);
                     window.localStorage.setItem("user", username);
                     window.localStorage.setItem("id", userId);
-                    window.location.href = "profile.html";
+                    window.location.href = "profile.html";*/
                 }
             }
         }
