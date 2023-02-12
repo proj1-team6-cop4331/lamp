@@ -18,7 +18,7 @@ else
 {
   //prepare and bind
   $stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ?");
-  $stmt->bind_param("s", $Login);
+  $stmt->bind_param("s", $login);
   $stmt->execute();
   $result = $stmt->get_result();
 
