@@ -40,7 +40,8 @@ else
     
   } else {
     //username doesnt exist
-    returnWithError("Taken Username");
+    $id = -1;
+    returnSearchInfo('{'.'"id": "'.$id.''.'"}');
   }
 }
 ?>
