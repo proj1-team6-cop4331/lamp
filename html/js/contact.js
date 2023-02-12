@@ -6,7 +6,8 @@ function onLogin() {
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
         search: "",
-        userId: window.localStorage.getItem("id")
+        userId: window.localStorage.getItem("id"),
+        load: pageNum - 1
     };
 
     let jsonPayload = JSON.stringify(packageItUp);
@@ -45,6 +46,59 @@ function onLogin() {
     }
 }
 
+function loadPage(searchQuery, page) {
+    var packageItUp = {
+        search: searchQuery,
+        userId: window.localStorage.getItem("id"),
+        load: page - 1
+    };
+
+    let jsonPayload = JSON.stringify(packageItUp);
+
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/SearchContact.php";
+    
+    // Create a request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    // What the heck does this do?
+    xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
+
+    try {
+        // anonymous function to the gets called when the request is ready
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                // When we get a response from API, we'll get an id back.
+                let jsonObject = JSON.parse(xhr.responseText);
+                let arr = jsonObject.results;
+
+                for (let i = 0; i < arr.length; i++) {
+                    appendContactList(arr[i]);
+                }
+            }
+        }
+
+        // can we put this above the "ready state change?"
+        // That would make a lot more sense.
+        xhr.send(jsonPayload);
+    }
+
+    catch(theError) {
+        console.error(theError.message);
+    }
+}
+
+function prevPage() {
+    pageNum--;
+    if (pageNum < 1) pageNum = 1;
+    loadPage(pageNum);
+}
+
+function nextPage() {
+    pageNum++;
+    loadPage(pageNum);
+}
 // Show a template for the user to type in a contact
 function toggleCreation() {
     
@@ -94,7 +148,6 @@ function accept() {
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
                 if (err == "") {
-                    console.log("contact added successfully");
                     toggleCreation();
                     appendContactList(contact);
                 }
@@ -207,9 +260,7 @@ function confirmEdit() {
         mail: replaceThese[3].value
     };
 
-    // all of this appears to work, but it doesn't. We're not giving
     // EditContact.php the right data.
-    console.log(newContact);
 
     let jsonPayload = JSON.stringify(newContact);
 
@@ -233,7 +284,6 @@ function confirmEdit() {
 
                 // The API couldn't register this new user. (Perhaps that user already exists.)
                 if (err == "") {
-                    console.log("contact edited successfully");
 
                     // Traverse the DOM across the row
                     // and replace the inputs with divs.
@@ -277,7 +327,6 @@ function trash() {
 
     let current = this.parentNode;
     let deleteThisID = current.dataset.id;
-    console.log("We're gonna delete the contact with ID:n " + deleteThisID);
 
     let obj = {ID: deleteThisID};
     let jsonPayload = JSON.stringify(obj);
@@ -298,8 +347,6 @@ function trash() {
 
                 // Read in the response from the API.
                 let jsonObject = JSON.parse(xhr.responseText);
-                console.log(jsonObject);
-                console.log("I think 'delete' worked");
 
                 numContacts--;
                 let starLabel = document.getElementById("numLives");
@@ -333,7 +380,6 @@ function trash() {
 
 function doSearch() {
     let searchString = document.getElementById("searchBar").value;
-    console.log("Let's search for " + searchString);
 
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {

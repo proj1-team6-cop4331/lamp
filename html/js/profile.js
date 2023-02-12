@@ -13,6 +13,7 @@ function doLogout() {
     window.location.href = "index.html";
 }
 
+//Creates add contact form when you are offline
 function addPlaceholder() {
     let grid = document.getElementById("grid");
 

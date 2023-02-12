@@ -33,7 +33,8 @@ h3 {
     float: right;
     width: 6%;
     height: 3%;
-    font-size: 1em;
+    font-family: monospace;
+    font-size: 1.1em;
     min-width: fit-content;
     margin-right: 30px;
     border-radius: 5px;
@@ -52,6 +53,8 @@ h3 {
 #searchAddBar button {
     border-radius: 5px;
     margin-left: 10px;
+    font-family: monospace;
+    font-size: 1.3em;
     width: 8em;
     height: 3vh;
 }
@@ -66,7 +69,10 @@ h3 {
 
 #searchLabel {
     color: white;
+    font-family: 'Press Start 2P', monospace;
     text-shadow: 1px 1px 0.5px black;
+    position: relative;
+    top: 4px;
     margin-right: 10px;
 }
 
@@ -97,9 +103,11 @@ input#searchBar {
 #menuBox {
     display: flex;
     flex-direction: column;
+    align-items: spa;
     width: 75%;
     margin: auto;
-    padding-bottom: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
     background-color: #dfaa02;
     border: 5px #a36f13 solid;
 }
@@ -125,7 +133,7 @@ input#searchBar {
 #grid > .header {
     font-size: 20px;
     font-weight: 600;
-    color: white;
+    color: black;
     text-shadow: 1px 1px 0px black;
     border-bottom-style: solid;
     border-bottom-color: black;

@@ -10,8 +10,6 @@ loginButton.addEventListener("click", function () {
     let username = document.querySelector("#enterUsername").value;
     let password = document.querySelector("#enterPassword").value;
 
-    console.log("Your username was " + username + " and your password was " + password);
-
     // Create a javascript object containing the stuff we want to send to the API
     let packageItUp = {
         login: username,
