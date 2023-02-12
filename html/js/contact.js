@@ -1,3 +1,5 @@
+let pageNum = 1;
+let numContacts = 0;
 
 function onLogin() {
 
@@ -119,6 +121,7 @@ function accept() {
 // We need to create DOM nodes for the new contact
 // so it can be displayed.
 function appendContactList(contact) {
+    numContacts++;
     let options = document.createElement("div");
     options.classList.add("editAndDelete");
     let editButton = document.createElement("img");
@@ -149,6 +152,9 @@ function appendContactList(contact) {
     }
 
     grid.appendChild(options);
+
+    let starLabel = document.getElementById("numLives");
+    starLabel.value = " X " + numContacts;
 }
 
 function edit() {
@@ -294,6 +300,9 @@ function trash() {
                 console.log(jsonObject);
                 console.log("I think 'delete' worked");
 
+                numContacts--;
+                let starLabel = document.getElementById("numLives");
+                starLabel.value = " X " + numContacts;
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
                 deleteThese = [];
