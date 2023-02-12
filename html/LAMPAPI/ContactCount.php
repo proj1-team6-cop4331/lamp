@@ -15,7 +15,7 @@ if ($conn->connect_error) {
     $result = $stmt->get_result()->fetch_assoc();
 
     // Get the count as json
-    $searchResults = '{"Count" : "' . $result['total'] . '""}';
+    $searchResults = '{"Count" : "' . $result['total'] . '"}';
 
     returnWithInfo($searchResults);
 
