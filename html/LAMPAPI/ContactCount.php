@@ -14,6 +14,7 @@ if ($conn->connect_error) {
     $stmt->execute();
     $result = $stmt->get_result();
 
+    // Get the count as json
     $searchResults = '{"Count" : "' . $result . '""}';
 
     returnWithInfo($searchResults);
