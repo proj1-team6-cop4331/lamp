@@ -145,12 +145,18 @@ input#searchBar {
 }
 
 #leftArrow {
+    width: 2vw;
     transform: rotate(-90deg);
-    width: 1vw;
+    
 }
 #rightArrow {
+    width: 2vw;
     transform: rotate(90deg);
-    width: 1vw;
+    
+}
+
+h5 {
+    font-size: 18px;
 }
 
 .checkOrX, .editAndDelete{
