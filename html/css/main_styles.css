@@ -34,6 +34,8 @@ h1, label, #loginButton {
 
 #head-bar > * {
     padding: 10px 30px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .nav-link {

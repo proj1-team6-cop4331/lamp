@@ -3,8 +3,9 @@
     "",
     "\\html",
     "\\html\\css",
-    "\\html\\images"
+    "\\html\\images",
+    "\\html\\js"
   ],
-  "SelectedNode": "\\html\\images\\board.png",
+  "SelectedNode": "\\html\\js\\login.js",
   "PreviewInSolutionExplorer": false
 }

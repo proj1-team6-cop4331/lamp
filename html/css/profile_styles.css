@@ -7,11 +7,12 @@ h3 {
     color: white;
 }
 
-#user {
+#name {
     text-align: right;
     color: white;
     text-shadow: 1px 1px 2px black;
     margin-right: 30px;
+    margin-bottom: 1.4vh;
 }
 
 #bricks {
@@ -21,6 +22,7 @@ h3 {
 
 #star {
     width: 50px;
+    padding-top: 1vh;
 }
 
 #numLives {
@@ -30,6 +32,9 @@ h3 {
 #logout {
     float: right;
     width: 6%;
+    height: 3%;
+    font-size: 1em;
+    min-width: fit-content;
     margin-right: 30px;
     border-radius: 5px;
 }
@@ -47,10 +52,16 @@ h3 {
 #searchAddBar button {
     border-radius: 5px;
     margin-left: 10px;
+    width: 8em;
+    height: 3vh;
 }
 
 #searchAddBar > input:placeholder-shown {
     font-style: italic;
+}
+
+#searchAddBar > input {
+    height: 1.4em;
 }
 
 #searchLabel {
@@ -78,6 +89,9 @@ input#searchBar {
 #searchAddBar img {
     width: 35px;
     height: 35px;
+    position: relative;
+    top: 1vh;
+    left: 0.4vw;
 }
 
 #menuBox {

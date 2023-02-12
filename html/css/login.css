@@ -2,10 +2,10 @@
     margin: 2rem auto;
     display: block;
     position: relative;
-    width: 30%;
+    width: 50%;
     text-align: center;
     background-color: #c06434;
-    aspect-ratio: 1.2;
+    aspect-ratio: 10/6;
 }
 
 body {
@@ -16,8 +16,11 @@ body {
 }
 
 input {
-    width: 15vw;
+    width: 20vw;
     height: 2vw;
+    font-size: 1.2em;
+    min-width: 130px;
+    min-height: 20px;
 }
 
 
@@ -32,14 +35,6 @@ input {
 
 .container {
     margin-top: 3vw;
-}
-
-#back {
-    display: inline-block;
-    float: left;
-    position: relative;
-    top: 46vh;
-    left: 2vw;
 }
 
 #back:hover {
@@ -58,14 +53,14 @@ input {
 #heading {
     display: block;
     margin: auto;
-    padding-bottom: 5vw;
+    padding-bottom: 1vw;
     width: 85%;
     height: 12%;
 }
 
 h3, h4 {
     color: white;
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-family: 'Press Start 2P', cursive;
     margin: 1vw;
     margin-top: 0;
@@ -79,9 +74,13 @@ h1 {
     padding-top: 3vw;
 }
 
+#loginForm {
+    margin-top: 7vh;
+}
+
 #loginForm > label {
     font-family: "VT323" , fantasy;
-    font-size: 2em;
+    font-size: 2.5em;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -105,17 +104,6 @@ form i {
     cursor: pointer;
 }
 
-#loginButton {
-    font-weight: 500;
-    font-size: 2em;
-    width: 40%;
-    height: 1.5em;
-    margin-bottom: 15px;
-    color: white;
-    background-color: black;
-    font-family: "VT323", fantasy;
-}
-
 #loginButton:hover {
     cursor: pointer;
 }
@@ -125,38 +113,121 @@ form i {
     padding: 6px 4px 4px 4px;
 }
 
-#black1 {
-    position: absolute;
-    background-color: black;
-    width: 20px;
-    height: 20px;
-    left: 20px;
-    top: 20px;
+@media screen and (min-width: 720px) {
+
+    #back {
+        display: inline-block;
+        float: left;
+        position: relative;
+        top: 53vh;
+        left: 2vw;
+    }
+
+    #loginButton {
+        font-weight: 500;
+        font-size: 2.5em;
+        width: 30%;
+        min-width: fit-content;
+        height: 1.5em;
+        margin-bottom: 15px;
+        color: white;
+        background-color: black;
+        font-family: "VT323", fantasy;
+    }
+
+    #black1 {
+        position: absolute;
+        background-color: black;
+        width: 50px;
+        height: 35px;
+        left: 20px;
+        top: 20px;
+    }
+
+    #black2 {
+        position: absolute;
+        background-color: black;
+        width: 50px;
+        height: 35px;
+        right: 20px;
+        top: 20px;
+    }
+
+    #black3 {
+        position: absolute;
+        background-color: black;
+        width: 50px;
+        height: 35px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    #black4 {
+        position: absolute;
+        background-color: black;
+        width: 50px;
+        height: 35px;
+        left: 20px;
+        bottom: 20px;
+    }
 }
 
-#black2 {
-    position: absolute;
-    background-color: black;
-    width: 20px;
-    height: 20px;
-    right: 20px;
-    top: 20px;
+@media screen and (min-width: 160px) {
+
+    #back {
+        display: inline-block;
+        float: left;
+        position: relative;
+        top: 42vh;
+        left: 2vw;
+    }
+
+    #loginButton {
+        font-weight: 500;
+        font-size: 24px;
+        width: 30%;
+        min-width: 130px;
+        height: 1.5em;
+        margin-bottom: 15px;
+        color: white;
+        background-color: black;
+        font-family: "VT323", fantasy;
+    }
+
+    #black1 {
+        position: absolute;
+        background-color: black;
+        width: 25px;
+        height: 25px;
+        left: 20px;
+        top: 20px;
+    }
+
+    #black2 {
+        position: absolute;
+        background-color: black;
+        width: 25px;
+        height: 25px;
+        right: 20px;
+        top: 20px;
+    }
+
+    #black3 {
+        position: absolute;
+        background-color: black;
+        width: 25px;
+        height: 25px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    #black4 {
+        position: absolute;
+        background-color: black;
+        width: 25px;
+        height: 25px;
+        left: 20px;
+        bottom: 20px;
+    }
 }
 
-#black3 {
-    position: absolute;
-    background-color: black;
-    width: 20px;
-    height: 20px;
-    right: 20px;
-    bottom: 20px;
-}
-
-#black4 {
-    position: absolute;
-    background-color: black;
-    width: 20px;
-    height: 20px;
-    left: 20px;
-    bottom: 20px;
-}
