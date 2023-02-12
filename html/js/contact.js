@@ -155,7 +155,7 @@ function appendContactList(contact) {
 
     let starLabel = document.getElementById("numLives");
     console.log(starLabel + " should become " + numContacts);
-    starLabel.value = " X " + numContacts;
+    starLabel.innerHTML = " X " + numContacts;
 }
 
 function edit() {
@@ -304,7 +304,7 @@ function trash() {
                 numContacts--;
                 let starLabel = document.getElementById("numLives");
                 console.log(starLabel + " should become " + numContacts);
-                starLabel.value = " X " + numContacts;
+                starLabel.innerHTML = " X " + numContacts;
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
                 deleteThese = [];
