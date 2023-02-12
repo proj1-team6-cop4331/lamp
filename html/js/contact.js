@@ -93,12 +93,12 @@ function loadPage(searchQuery, page) {
 function prevPage() {
     pageNum--;
     if (pageNum < 1) pageNum = 1;
-    loadPage(pageNum);
+    loadPage("", pageNum);
 }
 
 function nextPage() {
     pageNum++;
-    loadPage(pageNum);
+    loadPage("", pageNum);
 }
 // Show a template for the user to type in a contact
 function toggleCreation() {
