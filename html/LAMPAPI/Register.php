@@ -41,7 +41,7 @@ else
   } else {
     //username doesnt exist
     $id = -1;
-    returnSearchInfo('{'.'"id": "'.$id.''.'"}');
+    returnWithInfo($firstName, $lastName, $id);
   }
 }
 ?>
