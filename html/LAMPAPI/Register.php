@@ -35,8 +35,8 @@ else
     $conn->close();
 
     //return info
-    returnSearchInfo('{'.'"id": "'.$id.''.'"}');
-
+    //returnSearchInfo('{'.'"id": "'.$id.''.'"}');
+    returnWithInfo($firstName, $lastName, $id);
     
   } else {
     //username doesnt exist
