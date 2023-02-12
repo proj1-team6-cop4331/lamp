@@ -2,8 +2,8 @@
     margin: 2rem auto;
     display: block;
     position: relative;
-    width: 50%;
     text-align: center;
+    width: 50%;
     background-color: #c06434;
     aspect-ratio: 10/6;
 }
@@ -12,7 +12,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 body {
@@ -92,7 +94,7 @@ h1 {
 
     .flex-form > label {
         font-family: "VT323", fantasy;
-        font-size: 2.5em;
+        font-size: 2.5vw;
         margin-right: 20px;
         text-shadow: 1px 1px 2px black;
     }
@@ -101,8 +103,12 @@ h1 {
         margin-bottom: 5%;
     }
 
-    .flex-form > input {
+    .flex-form > input, span > input {
         background-color: #cbcbcb;
+    }
+
+    .flex-form:first-child {
+        text-align: left;
     }
 
 input::placeholder {
@@ -110,7 +116,7 @@ input::placeholder {
     font-weight: 600;
 }
 
-form i {
+span i {
     position: relative;
     left: -10px;
     margin-left: -20px;
