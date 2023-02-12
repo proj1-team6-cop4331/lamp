@@ -21,7 +21,7 @@ if ($conn->connect_error) {
     $result->execute();
 
     // Get the count as json
-    $searchResults = '"Count" : "' . $result->num_rows() . '"';
+    $searchResults = '"Count" : "' . $result->num_rows . '"';
 
     returnWithInfo($searchResults);
 
