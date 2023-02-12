@@ -17,10 +17,11 @@ if ($conn->connect_error) {
 
     $id = $inData["userId"];
 
-    $result = $conn->query("SELECT * FROM Contacts WHERE userID=$id");
+    $result = $conn->prepare("SELECT * FROM Contacts WHERE userID=$id");
+    $result->execute();
 
     // Get the count as json
-    $searchResults = '"Count" : "' . $result->num_rows . '"';
+    $searchResults = '"Count" : "' . $result->num_rows() . '"';
 
     returnWithInfo($searchResults);
 
