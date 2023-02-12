@@ -154,6 +154,7 @@ function appendContactList(contact) {
     grid.appendChild(options);
 
     let starLabel = document.getElementById("numLives");
+    console.log(starLabel + " should become " + numContacts);
     starLabel.value = " X " + numContacts;
 }
 
@@ -302,6 +303,7 @@ function trash() {
 
                 numContacts--;
                 let starLabel = document.getElementById("numLives");
+                console.log(starLabel + " should become " + numContacts);
                 starLabel.value = " X " + numContacts;
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
