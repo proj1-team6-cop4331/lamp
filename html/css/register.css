@@ -114,6 +114,7 @@ form i {
     position: relative;
     left: -10px;
     margin-left: -20px;
+    color: black;
     cursor: pointer;
 }
 
