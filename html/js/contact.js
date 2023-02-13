@@ -319,11 +319,11 @@ function confirmEdit() {
                     editButton.setAttribute("src", "images/edit.png");
                     editButton.addEventListener("click", edit);               
                     outerThis.parentNode.replaceChild(editButton, outerThis);
-                    
+
                     let trashIcon = document.createElement("img");
                     trashIcon.setAttribute("src", "images/delete.png");
                     trashIcon.addEventListener("click", trash);
-                    outerThis.parentNode.replaceChild(trashIcon, outerThis);
+                    editButton.parentNode.replaceChild(trashIcon, editButton.parentNode.lastChild);
                 }
 
                 else {                   
