@@ -32,20 +32,13 @@ function onLogin() {
                 let jsonObject = JSON.parse(xhr.responseText);
                 let arr = jsonObject.results;
 
-                for (let i = 0; i < arr.length; i++) {
-                    appendContactList(arr[i]);
+                if (arr != undefined) {
+                    for (let i = 0; i < arr.length; i++) {
+                        appendContactList(arr[i]);
+                    }
                 }
 
-                let leftArrow = document.getElementById("leftArrow");
-                leftArrow.style.visibility = "visible";
-                let rightArrow = document.getElementById("rightArrow");
-                rightArrow.style.visibility = "visible";
-                if (pageNum == totalPages) {
-                    rightArrow.style.visibility = "hidden";
-                }
-                if (pageNum == 1) {
-                    leftArrow.style.visibility = "hidden";
-                }
+                getContactCount();
             }
         }
 
@@ -86,9 +79,21 @@ function getContactCount() {
                 let ans = jsonObject.Count;
                 console.log(ans);                
                 
-                totalPages = Math.ceil(ans / 10.0);
+                totalPages = Math.max(1, Math.ceil(ans / 10.0));
                 let pagesLabel = document.getElementById("totalPagesLabel");
                 pagesLabel.innerHTML = "" + totalPages;
+
+                let leftArrow = document.getElementById("leftArrow");
+                leftArrow.style.visibility = "visible";
+                let rightArrow = document.getElementById("rightArrow");
+                rightArrow.style.visibility = "visible";
+                console.log(totalPages);
+                if (pageNum == totalPages) {
+                    rightArrow.style.visibility = "hidden";
+                }
+                if (pageNum == 1) {
+                    leftArrow.style.visibility = "hidden";
+                }
             }
         }
 
@@ -136,20 +141,13 @@ function loadPage(searchQuery, page) {
                     grid.removeChild(grid.children[i]);
                 }
 
-                for (let i = 0; i < arr.length; i++) {
-                    appendContactList(arr[i]);
+                if (arr != undefined) {
+                    for (let i = 0; i < arr.length; i++) {
+                        appendContactList(arr[i]);
+                    }
                 }
 
-                let leftArrow = document.getElementById("leftArrow");
-                leftArrow.style.visibility = "visible";
-                let rightArrow = document.getElementById("rightArrow");
-                rightArrow.style.visibility = "visible";
-                if (pageNum == totalPages) {
-                    rightArrow.style.visibility = "hidden";
-                }
-                if (pageNum == 1) {
-                    leftArrow.style.visibility = "hidden";
-                }
+                getContactCount();
             }
         }
 
@@ -233,6 +231,7 @@ function accept() {
                 if (err == "") {
                     toggleCreation();
                     appendContactList(contact);
+                    getContactCount();
                 }
 
                 else {                   
@@ -543,6 +542,8 @@ function doSearch() {
                 for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
                 }
+
+                getContactCount();
             }
         }
 
