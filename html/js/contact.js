@@ -71,8 +71,9 @@ function getContactCount() {
             if (this.readyState == 4 && this.status == 200) {
 
                 let jsonObject = JSON.parse(xhr.responseText);
+                console.log(jsonObject);
                 let ans = jsonObject.Count;
-                
+                console.log(ans);                
                 return ans;
             }
         }
