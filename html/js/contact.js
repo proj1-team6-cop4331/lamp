@@ -38,17 +38,7 @@ function onLogin() {
                     }
                 }
 
-                let leftArrow = document.getElementById("leftArrow");
-                leftArrow.style.visibility = "visible";
-                let rightArrow = document.getElementById("rightArrow");
-                rightArrow.style.visibility = "visible";
-                console.log(totalPages);
-                if (pageNum == totalPages) {
-                    rightArrow.style.visibility = "hidden";
-                }
-                if (pageNum == 1) {
-                    leftArrow.style.visibility = "hidden";
-                }
+                getContactCount();
             }
         }
 
@@ -92,6 +82,18 @@ function getContactCount() {
                 totalPages = Math.ceil(ans / 10.0);
                 let pagesLabel = document.getElementById("totalPagesLabel");
                 pagesLabel.innerHTML = "" + totalPages;
+
+                let leftArrow = document.getElementById("leftArrow");
+                leftArrow.style.visibility = "visible";
+                let rightArrow = document.getElementById("rightArrow");
+                rightArrow.style.visibility = "visible";
+                console.log(totalPages);
+                if (pageNum == totalPages) {
+                    rightArrow.style.visibility = "hidden";
+                }
+                if (pageNum == 1) {
+                    leftArrow.style.visibility = "hidden";
+                }
             }
         }
 
@@ -145,16 +147,7 @@ function loadPage(searchQuery, page) {
                     }
                 }
 
-                let leftArrow = document.getElementById("leftArrow");
-                leftArrow.style.visibility = "visible";
-                let rightArrow = document.getElementById("rightArrow");
-                rightArrow.style.visibility = "visible";
-                if (pageNum == totalPages) {
-                    rightArrow.style.visibility = "hidden";
-                }
-                if (pageNum == 1) {
-                    leftArrow.style.visibility = "hidden";
-                }
+                getContactCount();
             }
         }
 
@@ -238,6 +231,7 @@ function accept() {
                 if (err == "") {
                     toggleCreation();
                     appendContactList(contact);
+                    getContactCount();
                 }
 
                 else {                   
@@ -548,6 +542,8 @@ function doSearch() {
                 for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
                 }
+
+                getContactCount();
             }
         }
 
