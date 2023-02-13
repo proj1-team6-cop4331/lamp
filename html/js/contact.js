@@ -32,8 +32,10 @@ function onLogin() {
                 let jsonObject = JSON.parse(xhr.responseText);
                 let arr = jsonObject.results;
 
-                for (let i = 0; i < arr.length; i++) {
-                    appendContactList(arr[i]);
+                if (arr != undefined) {
+                    for (let i = 0; i < arr.length; i++) {
+                        appendContactList(arr[i]);
+                    }
                 }
 
                 let leftArrow = document.getElementById("leftArrow");
@@ -136,8 +138,10 @@ function loadPage(searchQuery, page) {
                     grid.removeChild(grid.children[i]);
                 }
 
-                for (let i = 0; i < arr.length; i++) {
-                    appendContactList(arr[i]);
+                if (arr != undefined) {
+                    for (let i = 0; i < arr.length; i++) {
+                        appendContactList(arr[i]);
+                    }
                 }
 
                 let leftArrow = document.getElementById("leftArrow");
