@@ -7,6 +7,11 @@ h3 {
     color: white;
 }
 
+#user {
+    position: relative;
+    top: 1.5vh;
+}
+
 #name {
     text-align: right;
     color: white;
@@ -23,6 +28,8 @@ h3 {
 #star {
     width: 50px;
     padding-top: 1vh;
+    position: relative;
+    top: 1vh;
 }
 
 #numLives {
