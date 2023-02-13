@@ -1,6 +1,7 @@
 let pageNum = 1;
 let totalPages = 1;
 let numContacts = 0;
+let originalStrings = [];
 
 function onLogin() {
 
@@ -272,7 +273,6 @@ function edit() {
     let current = this.parentNode;
     let grid = current.parentNode;
 
-    let originalStrings = [];
     let replaceThese = [];
 
     // Traverse the DOM across the row
@@ -298,12 +298,11 @@ function edit() {
     this.parentNode.replaceChild(confirmButton, this);
 
     let cancelButton = document.createElement("img");
-    cancelButton.setAttribute("src", "confirmEditimages/delete_button.png");
+    cancelButton.setAttribute("src", "images/delete_button.png");
     cancelButton.setAttribute("width", "50px");
-    cancelButton.addEventListener("click", function() {
-        cancelEdit(originalStrings);
-    });
-    this.parentNode.replaceChild(cancelButton, this.parentNode.lastChild);
+    cancelButton.addEventListener("click", cancelEdit);
+    cancelButton.previousSibling = confirmButton;
+    confirmButton.parentNode.replaceChild(cancelButton, confirmButton.parentNode.lastChild);
 }
 
 function confirmEdit() {
@@ -361,10 +360,13 @@ function confirmEdit() {
 
                     let editButton = document.createElement("img");
                     editButton.setAttribute("src", "images/edit.png");
-                    editButton.addEventListener("click", edit);
-                    outerThis.parentNode.lastChild.classList.toggle("invisible");
-                    outerThis.parentNode.firstChild.addEventListener("click", edit);
+                    editButton.addEventListener("click", edit);               
                     outerThis.parentNode.replaceChild(editButton, outerThis);
+
+                    let trashIcon = document.createElement("img");
+                    trashIcon.setAttribute("src", "images/delete.png");
+                    trashIcon.addEventListener("click", trash);
+                    editButton.parentNode.replaceChild(trashIcon, editButton.parentNode.lastChild);
                 }
 
                 else {                   
@@ -385,23 +387,32 @@ function confirmEdit() {
     }
 }
 
-function cancelEdit(origStrings) {
+function cancelEdit() {
+
+    let current = this.parentNode;
+    let replaceThese = [];
+
+    for (let i = 3; i >= 0; i--) {   
+        current = current.previousSibling;
+        replaceThese[i] = current;
+    }
+
     for(let i = 0; i < 4; i++) {
         let newDiv = document.createElement("div");
-        newDiv.innerHTML = origStrings[i];
+        newDiv.innerHTML = originalStrings[i];
         newDiv.classList.add("contact-info");
-        grid.replaceChild(newDiv, this.parentNode.parentNode.childList[i]);
+        grid.replaceChild(newDiv, replaceThese[i]);
     }
 
     editIcon = document.createElement("img");
     editIcon.setAttribute("src", "images/edit.png");
     editIcon.addEventListener("click", edit);
-    this.parentNode.replaceChild(editIcon, this);
+    this.parentNode.replaceChild(editIcon, this.previousSibling);
 
     trashIcon = document.createElement("img");
-    trashIcon.setAttribute("src", "images/edit.png");
+    trashIcon.setAttribute("src", "images/delete.png");
     trashIcon.addEventListener("click", trash);
-    this.parentNode.replaceChild(trashIcon, this.nextSibling);
+    this.parentNode.replaceChild(trashIcon, this);
 }
 
 function trash() {
