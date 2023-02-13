@@ -317,10 +317,13 @@ function confirmEdit() {
 
                     let editButton = document.createElement("img");
                     editButton.setAttribute("src", "images/edit.png");
-                    editButton.addEventListener("click", edit);
-                    outerThis.parentNode.lastChild.classList.toggle("invisible");
-                    outerThis.parentNode.firstChild.addEventListener("click", edit);
+                    editButton.addEventListener("click", edit);               
                     outerThis.parentNode.replaceChild(editButton, outerThis);
+                    
+                    let trashIcon = document.createElement("img");
+                    trashIcon.setAttribute("src", "images/delete.png");
+                    trashIcon.addEventListener("click", trash);
+                    outerThis.parentNode.replaceChild(trashIcon, outerThis);
                 }
 
                 else {                   
