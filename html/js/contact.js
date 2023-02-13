@@ -40,6 +40,8 @@ function onLogin() {
                 }
 
                 getContactCount();
+                let pageNumLabel = document.getElementById("pageNumLabel");
+                pageNumLabel.innerHTML = pageNum;
             }
         }
 
@@ -547,6 +549,8 @@ function doSearch() {
                 }
 
                 getContactCount();
+                let pageNumLabel = document.getElementById("pageNumLabel");
+                pageNumLabel.innerHTML = pageNum;
             }
         }
 
