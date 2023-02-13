@@ -130,14 +130,14 @@ function loadPage(searchQuery, page) {
                 }
 
                 let leftArrow = document.getElementById("leftArrow");
-                leftArrow.setAttribute("visibility", "visible");
-                let rightArrow = documet.getElementById("rightArrow");
-                rightArrow.setAttribute("visibility", "visible");
+                leftArrow.style.visibility = "visible";
+                let rightArrow = document.getElementById("rightArrow");
+                rightArrow.style.visibility = "visible";
                 if (pageNum == totalPages) {
-                    rightArrow.setAttribute("visibility", "hidden");
+                    rightArrow.style.visibility = "hidden";
                 }
                 if (pageNum == 1) {
-                    leftArrow.setAttribute("visibility", "hidden");
+                    leftArrow.style.visibility = "hidden";
                 }
             }
         }
