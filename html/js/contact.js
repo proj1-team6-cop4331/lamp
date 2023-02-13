@@ -266,6 +266,7 @@ function appendContactList(contact) {
     starLabel.innerHTML = " X " + numContacts;
     
     totalPages = Math.ceil(getContactCount() / 10.0);
+    console.log(totalPages);
     let pagesLabel = document.getElementById("totalPagesLabel");
     pagesLabel.innerHTML = "" + totalPages;
 }
