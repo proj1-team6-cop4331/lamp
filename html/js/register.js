@@ -13,6 +13,11 @@ registerButton.addEventListener("click", function() {
         document.getElementById("invalidText").innerHTML = "Your password must be at least 8 characters long!";
         return;
     }
+    else if (username.length < 1 || firstName.length < 1 || lastName.length < 1) {
+        document.getElementById("invalidText").style.display = "block";
+        document.getElementById("invalidText").innerHTML = "Please fill out all fields!";
+        return;
+    }
 
     // Create a javascript object containing the stuff we want to send to the API
     let packageItUp = {
