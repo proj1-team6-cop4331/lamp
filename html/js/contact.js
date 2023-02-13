@@ -35,6 +35,17 @@ function onLogin() {
                 for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
                 }
+
+                let leftArrow = document.getElementById("leftArrow");
+                leftArrow.style.visibility = "visible";
+                let rightArrow = document.getElementById("rightArrow");
+                rightArrow.style.visibility = "visible";
+                if (pageNum == totalPages) {
+                    rightArrow.style.visibility = "hidden";
+                }
+                if (pageNum == 1) {
+                    leftArrow.style.visibility = "hidden";
+                }
             }
         }
 
