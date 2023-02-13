@@ -1,4 +1,5 @@
 let pageNum = 1;
+let totalPages = 1;
 let numContacts = 0;
 
 function onLogin() {
@@ -41,6 +42,44 @@ function onLogin() {
         xhr.send(jsonPayload);
     }
 
+    catch(theError) {
+        console.error(theError.message);
+    }
+}
+
+function getContactCount() {
+    // Create a javascript object containing the stuff we want to send to the API
+    var packageItUp = {
+        userId: window.localStorage.getItem("id"),
+    };
+
+    let jsonPayload = JSON.stringify(packageItUp);
+
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/ContactCount.php";
+    
+    // Create a request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    // What the heck does this do?
+    xhr.setRequestHeader("Content-type", "application/json; charset = utf-8");
+
+    try {
+        // anonymous function to the gets called when the request is ready
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                let jsonObject = JSON.parse(xhr.responseText);
+                let ans = jsonObject.count;
+                
+                return ans;
+            }
+        }
+
+        // can we put this above the "ready state change?"
+        // That would make a lot more sense.
+        xhr.send(jsonPayload);
+    }
     catch(theError) {
         console.error(theError.message);
     }
@@ -223,6 +262,10 @@ function appendContactList(contact) {
     let starLabel = document.getElementById("numLives");
     console.log(starLabel + " should become " + numContacts);
     starLabel.innerHTML = " X " + numContacts;
+    
+    totalPages = Math.ceil(getContactCount() / 10.0);
+    let pagesLabel = document.getElementById("totalPagesLabel");
+    pagesLabel.innerHTML = "" + totalPages;
 }
 
 function edit() {
@@ -392,6 +435,10 @@ function trash() {
                 let starLabel = document.getElementById("numLives");
                 console.log(starLabel + " should become " + numContacts);
                 starLabel.innerHTML = " X " + numContacts;
+
+                totalPages = Math.ceil(getContactCount() / 10.0);
+                let pagesLabel = document.getElementById("totalPagesLabel");
+                pagesLabel.innerHTML = "" + totalPages;
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
                 deleteThese = [];
