@@ -531,6 +531,7 @@ function doSearch() {
                 let arr = jsonObject.results;
 
                 numContacts = 0;
+                pageNum = 1;
                 // Delete everything else.  
                 let grid = document.getElementById("grid");
                 for (let i = 10; i < grid.children.length;) {
