@@ -42,6 +42,7 @@ function onLogin() {
                 leftArrow.style.visibility = "visible";
                 let rightArrow = document.getElementById("rightArrow");
                 rightArrow.style.visibility = "visible";
+                console.log(totalPages);
                 if (pageNum == totalPages) {
                     rightArrow.style.visibility = "hidden";
                 }
