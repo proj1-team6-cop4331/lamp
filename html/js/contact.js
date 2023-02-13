@@ -79,7 +79,7 @@ function getContactCount() {
                 let ans = jsonObject.Count;
                 console.log(ans);                
                 
-                totalPages = Math.ceil(ans / 10.0);
+                totalPages = Math.max(1, Math.ceil(ans / 10.0));
                 let pagesLabel = document.getElementById("totalPagesLabel");
                 pagesLabel.innerHTML = "" + totalPages;
 
