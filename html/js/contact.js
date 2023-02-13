@@ -33,13 +33,13 @@ function onLogin() {
                 let jsonObject = JSON.parse(xhr.responseText);
                 let arr = jsonObject.results;
 
-                getContactCount();
-
                 if (arr != undefined) {
                     for (let i = 0; i < arr.length; i++) {
                         appendContactList(arr[i]);
                     }
                 }
+
+                getContactCount();
             }
         }
 
@@ -136,8 +136,6 @@ function loadPage(searchQuery, page) {
                 let arr = jsonObject.results;
 
                 numContacts = 0;
-                getContactCount();
-                
                 // Delete everything else.  
                 let grid = document.getElementById("grid");
                 for (let i = 10; i < grid.children.length;) {
@@ -149,6 +147,8 @@ function loadPage(searchQuery, page) {
                         appendContactList(arr[i]);
                     }
                 }
+
+                getContactCount();
             }
         }
 
