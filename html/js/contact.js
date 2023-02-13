@@ -85,15 +85,15 @@ function getContactCount() {
                 pagesLabel.innerHTML = "" + totalPages;
 
                 let leftArrow = document.getElementById("leftArrow");
-                leftArrow.style.visibility = "visible";
+                leftArrow.style.visibility = "hidden";
                 let rightArrow = document.getElementById("rightArrow");
-                rightArrow.style.visibility = "visible";
+                rightArrow.style.visibility = "hidden";
                 console.log(totalPages);
-                if (pageNum == totalPages) {
-                    rightArrow.style.visibility = "hidden";
+                if (pageNum < totalPages) {
+                    rightArrow.style.visibility = "visible";
                 }
-                if (pageNum == 1) {
-                    leftArrow.style.visibility = "hidden";
+                if (pageNum > 1) {
+                    leftArrow.style.visibility = "visible";
                 }
             }
         }
