@@ -2,6 +2,7 @@ let pageNum = 1;
 let totalPages = 1;
 let numContacts = 0;
 let originalStrings = [];
+let curSearch = "";
 
 function onLogin() {
 
@@ -164,7 +165,7 @@ function loadPage(searchQuery, page) {
 function prevPage() {
     pageNum--;
     if (pageNum < 1) pageNum = 1;
-    loadPage("", pageNum);
+    loadPage(curSearch, pageNum);
 
     let pageNumLabel = document.getElementById("pageNumLabel");
     pageNumLabel.innerHTML = pageNum;
@@ -175,7 +176,7 @@ function nextPage() {
     if (pageNum > totalPages) {
         pageNum--;
     }
-    loadPage("", pageNum);
+    loadPage(curSearch, pageNum);
 
     let pageNumLabel = document.getElementById("pageNumLabel");
     pageNumLabel.innerHTML = pageNum;
@@ -503,6 +504,7 @@ function trash() {
 
 function doSearch() {
     let searchString = document.getElementById("searchBar").value;
+    curSearch = searchString;
 
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
