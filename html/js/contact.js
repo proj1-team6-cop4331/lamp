@@ -74,7 +74,10 @@ function getContactCount() {
                 console.log(jsonObject);
                 let ans = jsonObject.Count;
                 console.log(ans);                
-                return ans;
+                
+                totalPages = Math.ceil(ans / 10.0);
+                let pagesLabel = document.getElementById("totalPagesLabel");
+                pagesLabel.innerHTML = "" + totalPages;
             }
         }
 
@@ -264,11 +267,8 @@ function appendContactList(contact) {
     let starLabel = document.getElementById("numLives");
     console.log(starLabel + " should become " + numContacts);
     starLabel.innerHTML = " X " + numContacts;
-    
-    totalPages = Math.ceil(getContactCount() / 10.0);
-    console.log(totalPages);
-    let pagesLabel = document.getElementById("totalPagesLabel");
-    pagesLabel.innerHTML = "" + totalPages;
+
+    getContactCount();
 }
 
 function edit() {
@@ -449,9 +449,8 @@ function trash() {
                 console.log(starLabel + " should become " + numContacts);
                 starLabel.innerHTML = " X " + numContacts;
 
-                totalPages = Math.ceil(getContactCount() / 10.0);
-                let pagesLabel = document.getElementById("totalPagesLabel");
-                pagesLabel.innerHTML = "" + totalPages;
+                getContactCount();
+
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
                 deleteThese = [];
