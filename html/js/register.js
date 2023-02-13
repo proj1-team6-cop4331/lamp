@@ -50,7 +50,7 @@ registerButton.addEventListener("click", function() {
                 // The API couldn't register this new user. (Perhaps that user already exists.)
                 if (userId < 1) {
                     document.getElementById("invalidText").style.display = "block";
-                    document.getElementById("invalidText").innerHTML = "Username or password is taken!"
+                    document.getElementById("invalidText").innerHTML = "That username is taken!"
 					return;
                 }
 
