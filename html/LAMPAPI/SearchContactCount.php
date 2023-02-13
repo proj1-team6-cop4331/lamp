@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 } else {
     $stmt = $conn->prepare("SELECT * from Contacts WHERE (firstName LIKE ? OR lastName LIKE ? )AND userID=?");
     $subName = "%" . $inData["search"] . "%";
-    $stmt->bind_param("sssi", $subName, $subName, $inData["userId"], $load);
+    $stmt->bind_param("ssi", $subName, $subName, $inData["userId"]);
     $stmt->execute();
     $result = $stmt->get_result();
     $count = $result->num_rows;
