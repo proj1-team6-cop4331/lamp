@@ -89,13 +89,16 @@ function getContactCount(searchStr) {
                 leftArrow.style.visibility = "hidden";
                 let rightArrow = document.getElementById("rightArrow");
                 rightArrow.style.visibility = "hidden";
-                console.log(totalPages);
+
                 if (pageNum < totalPages) {
                     rightArrow.style.visibility = "visible";
                 }
                 if (pageNum > 1) {
                     leftArrow.style.visibility = "visible";
                 }
+
+                let starLabel = document.getElementById("numLives");
+                starLabel.innerHTML = " X " + ans;
             }
         }
 
@@ -258,7 +261,6 @@ function accept() {
 // We need to create DOM nodes for the new contact
 // so it can be displayed.
 function appendContactList(contact) {
-    numContacts++;
     let options = document.createElement("div");
     options.classList.add("editAndDelete");
     let editButton = document.createElement("img");
@@ -289,12 +291,6 @@ function appendContactList(contact) {
     }
 
     grid.appendChild(options);
-
-    let starLabel = document.getElementById("numLives");
-    console.log(starLabel + " should become " + numContacts);
-    starLabel.innerHTML = " X " + numContacts;
-
-    getContactCount(curSearch);
 }
 
 function edit() {
@@ -470,11 +466,6 @@ function trash() {
                 // Read in the response from the API.
                 let jsonObject = JSON.parse(xhr.responseText);
 
-                numContacts--;
-                let starLabel = document.getElementById("numLives");
-                console.log(starLabel + " should become " + numContacts);
-                starLabel.innerHTML = " X " + numContacts;
-
                 getContactCount(curSearch);
 
                 // Traverse the DOM Nodes for the contact
@@ -533,7 +524,6 @@ function doSearch() {
                 var jsonObject = JSON.parse(xhr.responseText);
                 let arr = jsonObject.results;
 
-                numContacts = 0;
                 pageNum = 1;
                 // Delete everything else.  
                 let grid = document.getElementById("grid");
