@@ -39,7 +39,7 @@ function onLogin() {
                     }
                 }
 
-                getContactCount();
+                getContactCount(curSearch);
             }
         }
 
@@ -53,15 +53,16 @@ function onLogin() {
     }
 }
 
-function getContactCount() {
+function getContactCount(searchStr) {
     // Create a javascript object containing the stuff we want to send to the API
     var packageItUp = {
         userId: window.localStorage.getItem("id"),
+        search: searchStr
     };
 
     let jsonPayload = JSON.stringify(packageItUp);
 
-    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/ContactCount.php";
+    let url = "https://lamp-cop4331.skyclo.dev/LAMPAPI/SearchContactCount.php";
     
     // Create a request
     let xhr = new XMLHttpRequest();
@@ -148,7 +149,7 @@ function loadPage(searchQuery, page) {
                     }
                 }
 
-                getContactCount();
+                getContactCount(curSearch);
             }
         }
 
@@ -232,7 +233,7 @@ function accept() {
                 if (err == "") {
                     toggleCreation();
                     appendContactList(contact);
-                    getContactCount();
+                    getContactCount(curSearch);
                 }
 
                 else {                   
@@ -293,7 +294,7 @@ function appendContactList(contact) {
     console.log(starLabel + " should become " + numContacts);
     starLabel.innerHTML = " X " + numContacts;
 
-    getContactCount();
+    getContactCount(curSearch);
 }
 
 function edit() {
@@ -474,7 +475,7 @@ function trash() {
                 console.log(starLabel + " should become " + numContacts);
                 starLabel.innerHTML = " X " + numContacts;
 
-                getContactCount();
+                getContactCount(curSearch);
 
                 // Traverse the DOM Nodes for the contact
                 // we're supposed to delete.
@@ -546,7 +547,7 @@ function doSearch() {
                     appendContactList(arr[i]);
                 }
 
-                getContactCount();
+                getContactCount(curSearch);
                 let pageNumLabel = document.getElementById("pageNumLabel");
                 pageNumLabel.innerHTML = pageNum;
             }
