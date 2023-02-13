@@ -128,6 +128,17 @@ function loadPage(searchQuery, page) {
                 for (let i = 0; i < arr.length; i++) {
                     appendContactList(arr[i]);
                 }
+
+                let leftArrow = document.getElementById("leftArrow");
+                leftArrow.setAttribute("visibility", "visible");
+                let rightArrow = documet.getElementById("rightArrow");
+                rightArrow.setAttribute("visibility", "visible");
+                if (pageNum == totalPages) {
+                    rightArrow.setAttribute("visibility", "hidden");
+                }
+                if (pageNum == 1) {
+                    leftArrow.setAttribute("visibility", "hidden");
+                }
             }
         }
 
@@ -152,6 +163,9 @@ function prevPage() {
 
 function nextPage() {
     pageNum++;
+    if (pageNum > totalPages) {
+        pageNum--;
+    }
     loadPage("", pageNum);
 
     let pageNumLabel = document.getElementById("pageNumLabel");
