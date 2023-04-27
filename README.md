@@ -1,16 +1,11 @@
-# COP 4331 LAMP Stack Project, Team 6
+# Super Contacts
 
-Leonie Alexandra
+Contact Manager Application written using HTML, CSS, JavaScript, PHP, and MySQL.
 
-Conor Daly
-
-Blake Gassman
-
-Grafton LeGare
-
-Julie Nguyen
-
-John Sierra
-
-##
-Visit the site at http://161.35.112.134/
+### Developers
+- Conor Daly - Manager
+- Blake Gassman - Web
+- Grafton LeGare - Web
+- Julie Nguyen - Database/Design
+- John Sierra - API
+- Leonie Alexandra - API
